@@ -1,0 +1,174 @@
+.header__wrapper {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 70px;
+
+  background-color: transparent;
+  backdrop-filter: blur(0);
+  box-shadow: none;
+}
+
+.header__wrapper--show-elevation {
+  @include elevation--level4;
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.62);
+
+  transition: transitionFunc(all, 600ms);
+}
+
+.header__wrapper--with-menu {
+  background-color: var(--background-color);
+  transition: transitionFunc(background-color);
+}
+
+.header {
+  box-sizing: border-box;
+
+  height: 70px;
+  padding: var(--space-xs);
+
+  &__logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 13;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &__img {
+      width: var(--icon-xl);
+      height: var(--icon-xl);
+      margin-right: var(--space-xs);
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("https://wy.ganlin.com/logo.png");
+    }
+  }
+
+  &__bar {
+    grid-column: 6 / 11;
+    grid-row: 1 / 13;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: end;
+  }
+
+  &__controller {
+    grid-column: 11 / 14;
+    grid-row: 1 / 13;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__try-button {
+      @include Button;
+
+      display: flex;
+      align-items: center;
+
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: 8px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      color: var(--dark-text-color);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--on-primary-color);
+        background-color: var(--primary-color);
+        transition: transitionFunc(background-color, 1000ms);
+        transition: transitionFunc(border-color, 800ms);
+        transition: transitionFunc(color);
+
+        .header__controller__icon {
+          @include flip-vertical-bottom;
+        }
+      }
+    }
+
+    &__icon {
+      margin-left: var(--space-xxxs);
+    }
+  }
+
+  &__hamburger {
+    @include Button;
+    grid-row: 1 / 13;
+
+    display: none;
+    pointer-events: none;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      border: 1px solid transparent;
+
+      &:active {
+        border: 1px solid var(--dark-text-color);
+      }
+
+      &--active {
+        border: 1px solid var(--dark-text-color);
+        transition: transitionFunc(border-color);
+      }
+    }
+  }
+}
+
+.header__menu {
+  position: fixed;
+  top: 70px;
+
+  width: 100%;
+
+  background-color: var(--background-color);
+  visibility: hidden;
+}
+
+.header__menu--visible {
+  visibility: visible;
+  animation: slideInRight;
+  animation-duration: 300ms;
+}
+
+.header__menu--hidden {
+  visibility: visible;
+  animation: slideOutRight;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+// 响应式布局样式
+@media screen and (max-width: 1028px) {
+  .header__logo {
+    grid-column: 1 / 7;
+  }
+
+  .header__controller {
+    display: none;
+  }
+
+  .header__bar {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: flex;
+    pointer-events: visible;
+    grid-column: 7 / 14;
+  }
+}

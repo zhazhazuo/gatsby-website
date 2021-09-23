@@ -1,0 +1,63 @@
+.custom-button {
+  @include Button;
+
+  padding: var(--space-xs) var(--space-md);
+
+  border: 1px solid var(--dark-text-color);
+  border-radius: 8px;
+  background-color: var(--surface-color);
+  color: var(--dark-text-color);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    transition: transitionFunc(opacity, 700ms);
+  }
+}
+
+.custom-button--ghost {
+  background-color: transparent;
+}
+
+.custom-button--full {
+  width: 100%;
+}
+
+.custom-button--primary {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--on-primary-color);
+}
+
+.custom-button--secondary {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--on-secondary-color);
+}
+
+.custom-button--secondary {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--on-secondary-color);
+}
+
+.custom-button--large {
+  padding: var(--space-sm) var(--space-xl);
+}
+
+.custom-button--small {
+  padding: var(--space-xxs) var(--space-xs);
+}
+
+.custom-button--elevation-level4 {
+  @include elevation--level4;
+}
+.custom-button--elevation-level8 {
+  @include elevation--level8;
+}
+.custom-button--elevation-level16 {
+  @include elevation--level16;
+}
+.custom-button--elevation-level-top {
+  @include elevation--levelTop;
+}

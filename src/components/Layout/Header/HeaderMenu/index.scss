@@ -1,0 +1,11 @@
+.header-menu {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  padding: var(--space-sm);
+
+  &__content {
+    flex: 1;
+  }
+}

@@ -1,0 +1,24 @@
+.video-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg) 0;
+
+  background-color: var(--surface-color);
+  font-size: var(--text-md);
+  color: var(--gray-text-color);
+
+  &__icon {
+    font-size: var(--text-lg);
+    margin-right: var(--space-xs);
+    cursor: pointer;
+    color: var(--dark-text-color);
+  }
+
+  &__text {
+    cursor: pointer;
+    &:hover {
+      color: var(--dark-text-color);
+    }
+  }
+}

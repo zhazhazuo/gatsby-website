@@ -1,0 +1,22 @@
+// 海拔
+@mixin elevation--level4 {
+  box-shadow: rgba($color: #000, $alpha: 0.132) 0px 1.6px 3.6px 0px,
+    rgba($color: #000, $alpha: 0.108) 0px 0.3px 0.9px 0px;
+}
+
+@mixin elevation--level8 {
+  box-shadow: rgba($color: #000, $alpha: 0.132) 0px 3.2px 7.2px 0px,
+    rgba($color: #000, $alpha: 0.108) 0px 0.6px 1.8px 0px;
+}
+
+@mixin elevation--level16 {
+  box-shadow: rgba($color: #000, $alpha: 0.132) 0px 6.4px 14.4px 0px,
+    rgba($color: #000, $alpha: 0.108) 0px 1.2px 3.6px 0px;
+}
+
+@mixin elevation--levelTop {
+  box-shadow: rgba($color: #000, $alpha: 0.132) 0px 25.6px 57.6px 0px,
+    rgba($color: #000, $alpha: 0.108) 0px 4.8px 14.4px 0px;
+}
+
+$zIndex-highest: 999;

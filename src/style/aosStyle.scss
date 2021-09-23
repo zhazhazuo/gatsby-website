@@ -1,0 +1,9 @@
+body[data-aos-duration="5000"] [data-aos],
+[data-aos][data-aos][data-aos-duration="5000"] {
+  transition-duration: 5000ms;
+}
+
+[data-aos="fade-up"] {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}

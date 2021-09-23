@@ -1,0 +1,21 @@
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zIndex-highest;
+
+    width: 100%;
+  }
+
+  &__content {
+    box-sizing: border-box;
+  }
+
+  &__footer {
+  }
+}

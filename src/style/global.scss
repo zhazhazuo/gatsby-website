@@ -1,0 +1,64 @@
+@import "./color.scss";
+@import "./measurement.scss";
+@import "./aosStyle.scss";
+
+* {
+  font-family: Roboto, Noto Sans SC, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --text-base-size: 1em;
+  --text-scale-lg-ratio: 1.3125;
+  --text-scale-sm-ratio: 1.1125;
+  --text-scale-ratio: 1.15;
+
+  --text-xs: calc(
+    (var(--text-base-size) / var(--text-scale-sm-ratio)) /
+      var(--text-scale-sm-ratio)
+  ); // 12px
+  --text-sm: calc(var(--text-base-size) / var(--text-scale-sm-ratio)); // 14px
+  --text-md: var(--text-base-size); // 16px
+  --text-lg: calc(var(--text-md) * var(--text-scale-sm-ratio)); // 18px
+  --text-xl: calc(var(--text-lg) * var(--text-scale-sm-ratio)); // 20px
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 24px
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 28px
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio)); // 32px
+  --text-xxxxxl: calc(var(--text-xxxxl) * var(--text-scale-lg-ratio)); // 32px
+}
+
+body {
+  margin: 0;
+}
+
+.gird {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-column-gap: 2.19%;
+  grid-template-rows: repeat(12, minmax(0, 1fr));
+  grid-row-gap: 2.19%;
+
+  max-width: 1280px;
+}
+
+// TODO 考虑媒体查询使用场景合理性
+@media screen and (max-width: 600px) {
+  .gird {
+    margin: 0 16px;
+    .gird--6 {
+      grid-column-start: 1;
+      grid-column-end: 13;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1440px) {
+  .gird {
+    margin: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .gird {
+    margin: 0 auto;
+  }
+}

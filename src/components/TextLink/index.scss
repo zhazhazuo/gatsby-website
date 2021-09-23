@@ -1,0 +1,37 @@
+.text-link {
+  @include Subtitle2;
+
+  color: var(--dark-text-color);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    .ri-arrow-right-up-line {
+      transform: translateY(-3px) translateX(3px);
+      transition: transitionFunc(transform);
+    }
+
+    .ri-arrow-right-line {
+      transform: translateY(0px) translateX(3px);
+      transition: transitionFunc(transform);
+    }
+
+    .ri-arrow-down-s-line {
+      transform: rotate(180deg);
+      transition: transitionFunc(transform);
+    }
+
+    .text-link__text {
+      color: var(--gray-text-color);
+      transition: transitionFunc(color);
+    }
+  }
+
+  &__icon {
+    margin-left: var(--space-xxxs);
+    transform: translateY(0) translateX(0);
+  }
+}

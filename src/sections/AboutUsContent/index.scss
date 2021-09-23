@@ -1,0 +1,88 @@
+.about-us-content__wrapper {
+  position: relative;
+  height: 100vh;
+
+  border-top: 4px solid;
+  border-color: var(--gray-background-color);
+}
+
+.about-us-content {
+  height: 100%;
+
+  &__text {
+    grid-column: 1/ 13;
+    grid-row: 2 / 4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    @include H3;
+    margin-bottom: var(--space-md);
+  }
+
+  &__label {
+    @include Body2;
+
+    max-width: 70%;
+
+    color: var(--gray-text-color);
+  }
+
+  &__content {
+    grid-column: 1/ 13;
+    grid-row: 4 / 13;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__description {
+    position: relative;
+    width: 38.2%;
+
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      @include H4;
+      font-weight: normal;
+      margin-bottom: var(--space-xs);
+    }
+
+    &__text {
+      @include Body1;
+      color: var(--dark-text-color);
+    }
+
+    &__background {
+      position: absolute;
+      z-index: -1;
+      top: -100%;
+      left: -50%;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+    }
+  }
+
+  &__img {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    margin-left: var(--space-xxl);
+
+    &__content {
+      width: 100%;
+      height: 100%;
+
+      background-image: url("../../assets/team.svg");
+      background-size: cover;
+      background-position: center 20%;
+    }
+  }
+}

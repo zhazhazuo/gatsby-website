@@ -1,0 +1,27 @@
+:root,
+* {
+  --space-unit: 1rem;
+
+  --space-xxxs: calc(0.25 * var(--space-unit)); // 4
+  --space-xs: calc(0.5 * var(--space-unit)); // 8
+  --space-sm: calc(1 * var(--space-unit)); // 16
+  --space-md: calc(1.25 * var(--space-unit)); // 20
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-xxxl: calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+  --component-padding: var(--space-md);
+}
+
+:root {
+  --icon-xxxs: 8px;
+  --icon-xxs: 12px;
+  --icon-xs: 16px;
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 48px;
+  --icon-xxl: 64px;
+  --icon-xxxl: 96px;
+}
