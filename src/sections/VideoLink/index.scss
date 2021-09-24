@@ -12,13 +12,13 @@
     font-size: var(--icon-md);
     margin-right: var(--space-xs);
     cursor: pointer;
-    color: var(--dark-text-color);
+    color: var(--secondary-color);
   }
 
   &__text {
     cursor: pointer;
     &:hover {
-      color: var(--dark-text-color);
+      color: var(--secondary-color);
     }
   }
 }

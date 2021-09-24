@@ -53,10 +53,11 @@
       margin-bottom: var(--space-xs);
       margin-right: var(--space-xs);
       font-weight: 600;
-      &__subtitle {
-        @include Body1;
-        color: var(--gray-text-color);
-      }
+    }
+
+    &__text {
+      @include Body1;
+      color: var(--light-text-color);
     }
 
     &__background {

@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import Hero from "@/sections/Hero"
+import HowItWorks from "@/sections/HowItWorks"
 import VideLink from "@/sections/VideoLink"
 import ValueContent from "@/sections/ValueContent"
 import ObjectContent from "@/sections/ObjectContent"
@@ -18,6 +19,7 @@ const HomePage: FC<Props> = (props) => {
   return (
     <div className='home-page'>
       <Hero />
+      <HowItWorks />
       <VideLink />
       <ValueContent />
       <ObjectContent />

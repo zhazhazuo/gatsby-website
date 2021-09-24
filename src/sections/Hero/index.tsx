@@ -34,8 +34,8 @@ const Hero: FC<Props> = (props) => {
             生活APP · 物业数字化 · AIOT
           </div>
           <div className='hero__description__slogan'>
-            <span>让社区生活更</span>
-            <span>美好</span>
+            <span>让社区生活更美好</span>
+            {/* <span>美好</span> */}
           </div>
           <div className='hero__description__label'>
             为中小型物业企业和社区居民，提供极致的产品和服务

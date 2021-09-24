@@ -76,7 +76,7 @@
       border-radius: 8px;
       background-color: transparent;
       border: 1px solid transparent;
-      color: var(--dark-text-color);
+      color: var(--text-color);
       cursor: pointer;
 
       &:hover {
@@ -118,11 +118,11 @@
       border: 1px solid transparent;
 
       &:active {
-        border: 1px solid var(--dark-text-color);
+        border: 1px solid var(--text-color);
       }
 
       &--active {
-        border: 1px solid var(--dark-text-color);
+        border: 1px solid var(--text-color);
         transition: transitionFunc(border-color);
       }
     }
