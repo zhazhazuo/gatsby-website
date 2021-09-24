@@ -2,8 +2,29 @@
 @import "./measurement.scss";
 @import "./aosStyle.scss";
 
-* {
-  font-family: Roboto, Noto Sans SC, Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: "NotoSansSC-Black";
+  src: url("../assets/fonts/NotoSansSC-Black.otf");
+}
+@font-face {
+  font-family: "NotoSansSC-Bold";
+  src: url("../assets/fonts/NotoSansSC-Bold.otf");
+}
+@font-face {
+  font-family: "NotoSansSC-Light";
+  src: url("../assets/fonts/NotoSansSC-Light.otf");
+}
+@font-face {
+  font-family: "NotoSansSC-Medium";
+  src: url("../assets/fonts/NotoSansSC-Medium.otf");
+}
+@font-face {
+  font-family: "NotoSansSC-Regular";
+  src: url("../assets/fonts/NotoSansSC-Regular.otf");
+}
+@font-face {
+  font-family: "NotoSansSC-Thin";
+  src: url("../assets/fonts/NotoSansSC-Thin.otf");
 }
 
 :root {

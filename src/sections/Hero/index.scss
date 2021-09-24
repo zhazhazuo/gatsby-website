@@ -97,7 +97,7 @@
     align-self: start;
 
     &__tag {
-      @include H4;
+      @include H5;
       font-weight: normal;
     }
 
@@ -110,7 +110,7 @@
     }
 
     &__label {
-      @include Body1;
+      @include H5;
       margin-bottom: var(--space-md);
     }
   }

@@ -1,15 +1,15 @@
 .video-link {
+  @include Body1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: var(--space-lg) 0;
 
   background-color: var(--surface-color);
-  font-size: var(--text-md);
   color: var(--gray-text-color);
 
   &__icon {
-    font-size: var(--text-lg);
+    font-size: var(--icon-md);
     margin-right: var(--space-xs);
     cursor: pointer;
     color: var(--dark-text-color);

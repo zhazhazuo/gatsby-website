@@ -15,7 +15,7 @@
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: var(--light-secondary-color);
 }
 
 .value-content {
@@ -35,7 +35,7 @@
   }
 
   &__label {
-    @include Subtitle1;
+    @include Subtitle2;
 
     margin-top: var(--space-sm);
     color: var(--gray-text-color);
@@ -68,12 +68,13 @@
     }
 
     &__title {
+      @include Subtitle1;
       margin-top: var(--space-sm);
       margin-bottom: var(--space-xs);
-      font-size: var(--text-lg);
     }
 
     &__description {
+      @include Body1;
       color: var(--gray-text-color);
     }
   }

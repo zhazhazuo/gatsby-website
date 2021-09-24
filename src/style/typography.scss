@@ -2,48 +2,67 @@
 
 @mixin H1 {
   font-size: 68px;
-  font-weight: 900;
+  font-family: NotoSansSC-Bold;
   letter-spacing: 4px;
+  line-height: 1.2;
 }
 @mixin H2 {
   font-size: var(--text-xxxxxl);
+  font-family: NotoSansSC-Bold;
   font-weight: 600;
   letter-spacing: 4px;
 }
 @mixin H3 {
   font-size: var(--text-xxxxxl);
-  font-weight: 800;
+  font-family: NotoSansSC-Light;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 @mixin H4 {
   font-size: var(--text-xxxl);
+  font-family: NotoSansSC-Light;
+  letter-spacing: 1.5px;
   font-weight: 600;
 }
 @mixin H5 {
   font-size: var(--text-xxl);
+  font-family: NotoSansSC-Light;
+  letter-spacing: 1.5px;
   font-weight: 600;
 }
 @mixin Subtitle1 {
   font-size: var(--text-xl);
+  font-family: NotoSansSC-Medium;
+  font-weight: 400;
 }
 @mixin Subtitle2 {
   font-size: var(--text-lg);
+  font-family: NotoSansSC-Light;
   font-weight: 500;
 }
 @mixin Button {
   font-weight: 600;
+  font-family: NotoSansSC-Regular;
   font-size: var(--text-md);
 }
 @mixin Body1 {
   font-size: var(--text-md);
+  font-family: NotoSansSC-Regular;
+  font-weight: 400;
   letter-spacing: 3px;
+  line-height: 1.77;
 }
 @mixin Body2 {
   font-size: var(--text-sm);
+  font-family: NotoSansSC-Regular;
+  font-weight: 400;
   letter-spacing: 1.5px;
+  line-height: 1.77;
 }
 
 @mixin Caption {
   font-size: var(--text-xs);
+  font-family: NotoSansSC-Thin;
   font-weight: 400;
 }
 
