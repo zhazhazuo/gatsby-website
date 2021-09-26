@@ -134,7 +134,7 @@
 
 @include breakpoint(0, md) {
   .hero__description {
-    grid-row: 1 / 7;
+    grid-row: 2 / 7;
     grid-column: 1 / 13;
 
     &__slogan {
