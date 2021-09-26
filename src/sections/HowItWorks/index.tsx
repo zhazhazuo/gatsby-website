@@ -68,7 +68,7 @@ const HowItWorks: FC<Props> = (props) => {
         <div
           className='how-it-works__item'
           data-aos='fade-up'
-          data-aos-delay='1000'
+          data-aos-delay='800'
         >
           <div className='how-it-works__beautiful how-it-works__img'></div>
           <p className='how-it-works__text'>甘邻智慧社区</p>

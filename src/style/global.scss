@@ -1,31 +1,7 @@
 @import "./color.scss";
 @import "./measurement.scss";
 @import "./aosStyle.scss";
-
-@font-face {
-  font-family: "NotoSansSC-Black";
-  src: url("../assets/fonts/NotoSansSC-Black.otf");
-}
-@font-face {
-  font-family: "NotoSansSC-Bold";
-  src: url("../assets/fonts/NotoSansSC-Bold.otf");
-}
-@font-face {
-  font-family: "NotoSansSC-Light";
-  src: url("../assets/fonts/NotoSansSC-Light.otf");
-}
-@font-face {
-  font-family: "NotoSansSC-Medium";
-  src: url("../assets/fonts/NotoSansSC-Medium.otf");
-}
-@font-face {
-  font-family: "NotoSansSC-Regular";
-  src: url("../assets/fonts/NotoSansSC-Regular.otf");
-}
-@font-face {
-  font-family: "NotoSansSC-Thin";
-  src: url("../assets/fonts/NotoSansSC-Thin.otf");
-}
+@import "./tool.scss";
 
 :root {
   --text-base-size: 1em;
@@ -49,6 +25,7 @@
 
 body {
   margin: 0;
+  font-size: 16px;
 }
 
 ul {
@@ -71,8 +48,16 @@ li {
   max-width: 1280px;
 }
 
-// TODO 考虑媒体查询使用场景合理性
-@media screen and (max-width: 600px) {
+@include breakpoint(0, xs) {
+  :root,
+  * {
+    --space-unit: 0.8rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
   .gird {
     margin: 0 16px;
     .gird--6 {
@@ -82,13 +67,13 @@ li {
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1440px) {
+@include breakpoint(xs, xl) {
   .gird {
     margin: 0 32px;
   }
 }
 
-@media screen and (min-width: 1440px) {
+@include breakpoint(xl) {
   .gird {
     margin: 0 auto;
   }

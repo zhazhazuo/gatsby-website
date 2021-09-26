@@ -19,3 +19,15 @@
     grid-row: 8 / 12;
   }
 }
+
+@include breakpoint(0, md) {
+  .object-content__wrapper {
+    height: auto;
+    padding-bottom: var(--space-lg);
+  }
+
+  .object-content {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -16,21 +16,25 @@
   @return $type $duration cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-$breakpoints: (
-  xs: 32rem,
-  sm: 48rem,
-  md: 64rem,
-  lg: 80rem,
-  xl: 90rem,
+$breakpoint: (
+  xs: 512px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1440px,
 );
 
-@mixin breakpoint($breakpoint, $logic: false) {
-  @if ($logic) {
-    @media #{$logic} and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+@mixin breakpoint($breakpointStart: 0, $breakpointEnd: 0) {
+  @if ($breakpointStart != 0 and $breakpointEnd == 0) {
+    @media (min-width: map-get($map: $breakpoint, $key: $breakpointStart)) {
       @content;
     }
-  } @else {
-    @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+  } @else if ($breakpointStart == 0 and $breakpointEnd != 0) {
+    @media (max-width: map-get($map: $breakpoint, $key: $breakpointEnd)) {
+      @content;
+    }
+  } @else if ($breakpointStart != 0 and $breakpointEnd != 0) {
+    @media (min-width: map-get($map: $breakpoint, $key: $breakpointStart)) and (max-width: map-get($map: $breakpoint, $key: $breakpointEnd)) {
       @content;
     }
   }

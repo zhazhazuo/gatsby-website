@@ -6,7 +6,7 @@
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
-  height: 40vh;
+  min-height: 40vh;
   background-color: var(--surface-color);
 
   &__description {
@@ -85,5 +85,21 @@
   &__text {
     @include Body2;
     color: var(--light-text-color);
+  }
+}
+
+@include breakpoint(0, md) {
+  .how-it-works {
+    padding: var(--space-xl) 0;
+    flex-direction: column;
+
+    &__description {
+      margin-right: 0;
+      margin-bottom: var(--space-xl);
+    }
+
+    &__road-map {
+      flex-direction: column;
+    }
   }
 }

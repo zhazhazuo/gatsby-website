@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect, useState } from "react"
+import React, { FC, Fragment, useEffect } from "react"
 import { Helmet } from "react-helmet"
 import AOS from "aos"
 import LogoIcon from "@/assets/logo.png"
@@ -27,6 +27,10 @@ const Layout: FC<Props> = (props) => {
       <Helmet>
         <title>甘邻</title>
         <link rel='icon' type='image/png' href={LogoIcon} />
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
+        </style>
       </Helmet>
       <div className='layout'>
         <div className='layout__header'>

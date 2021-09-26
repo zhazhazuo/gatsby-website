@@ -19,6 +19,8 @@
 }
 
 .value-content {
+  position: relative;
+  z-index: 2;
   height: 100%;
 
   &__title {
@@ -76,6 +78,26 @@
     &__description {
       @include Body1;
       color: var(--light-text-color);
+    }
+  }
+}
+
+@include breakpoint(0, md) {
+  .value-content__wrapper {
+    min-height: 80vh;
+    height: auto;
+  }
+
+  .value-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-lg) 0;
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: var(--space-sm);
     }
   }
 }
