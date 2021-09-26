@@ -31,6 +31,27 @@ const Layout: FC<Props> = (props) => {
           @import
           url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
         </style>
+        {/* 强制禁止系统字体影响 */}
+        <script>{`(function() {
+
+            if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+                handleFontSize();
+            } else {
+                if (document.addEventListener) {
+                    document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+                    document.attachEvent("onWeixinJSBridgeReady", handleFontSize);  }
+            }
+            function handleFontSize() {
+                // 设置网页字体为默认大小
+                WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize' : 0 });
+                // 重写设置网页字体大小的事件
+                WeixinJSBridge.on('menu:setfont', function() {
+                    WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize' : 0 });
+                });
+            }
+            })();`}</script>
       </Helmet>
       <div className='layout'>
         <div className='layout__header'>
