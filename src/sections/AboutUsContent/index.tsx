@@ -11,7 +11,7 @@ type Props = IProps & Partial<DefaultProps>
 
 const AboutUsContent: FC<Props> = (props) => {
   return (
-    <div className='about-us-content__wrapper'>
+    <section className='about-us-content__wrapper'>
       <div className='about-us-content gird'>
         <div className='about-us-content__text'>
           <div className='about-us-content__title' data-aos='fade-in'>
@@ -57,7 +57,7 @@ const AboutUsContent: FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
