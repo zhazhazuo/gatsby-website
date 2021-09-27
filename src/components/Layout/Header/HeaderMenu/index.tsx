@@ -14,11 +14,11 @@ const HeaderMenu: FC<Props> = (props) => {
   return (
     <div className='header-menu'>
       <div className='header-menu__content'></div>
-      <div className='header-menu__bottom'>
-        {/* <CustomButton size='large' type='secondary'>
+      {/* <div className='header-menu__bottom'>
+        <CustomButton size='large' type='secondary'>
           立即体验
-        </CustomButton> */}
-      </div>
+        </CustomButton>
+      </div> */}
     </div>
   )
 }
