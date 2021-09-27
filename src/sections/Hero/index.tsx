@@ -1,5 +1,6 @@
-import CustomButton from "@/components/CustomButton"
 import React, { FC } from "react"
+import { useGetWindowHeight } from "@/common/hooks"
+import CustomButton from "@/components/CustomButton"
 import "./index.scss"
 
 interface IProps {}
@@ -11,8 +12,15 @@ type DefaultProps = Readonly<typeof defaultProps>
 type Props = IProps & Partial<DefaultProps>
 
 const Hero: FC<Props> = (props) => {
+  const { height } = useGetWindowHeight()
+
   return (
-    <section className='hero'>
+    <section
+      className='hero'
+      style={{
+        height: height,
+      }}
+    >
       <div
         className='hero__background__pop-left'
         data-aos='fade-up'

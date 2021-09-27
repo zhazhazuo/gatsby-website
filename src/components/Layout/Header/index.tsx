@@ -4,6 +4,7 @@ import cls from "classnames"
 import { map } from "ramda"
 import TextLink, { Props as TextLinkProps } from "../../TextLink"
 import HeaderMenu from "./HeaderMenu"
+import ProductionItem from "./ProductionItem"
 import "./index.scss"
 
 interface IProps {}
@@ -17,6 +18,21 @@ type Props = IProps & Partial<DefaultProps>
 const barList: TextLinkProps[] = [
   {
     content: "产品方案",
+    drawerContent: (
+      <ul className='production-list'>
+        {Array(4)
+          .fill("")
+          .map((item, index) => (
+            <div className='production-item__wrapper' key={index}>
+              <ProductionItem
+                title='甘邻APP'
+                description='社区居民线上服务生活APP'
+                icon='https://wy.ganlin.com/logo.png'
+              />
+            </div>
+          ))}
+      </ul>
+    ),
   },
   {
     content: "服务支持",

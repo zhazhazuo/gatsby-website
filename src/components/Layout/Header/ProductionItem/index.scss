@@ -1,0 +1,26 @@
+.production-item {
+  display: flex;
+  align-items: center;
+
+  width: 240px;
+
+  &__icon {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: var(--space-sm);
+  }
+
+  &__content {
+    &__title {
+      @include Body2;
+    }
+
+    &__description {
+      @include Caption;
+
+      color: var(--gray-text-color);
+    }
+  }
+}

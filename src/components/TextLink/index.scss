@@ -1,37 +1,69 @@
 .text-link {
   @include Subtitle2;
 
-  color: var(--text-color);
-
-  cursor: pointer;
+  position: relative;
 
   display: flex;
   align-items: center;
 
+  color: var(--text-color);
+  cursor: pointer;
+
+  .ri-arrow-down-s-line {
+    transform: rotate(0deg);
+    transition: transitionFunc(all);
+  }
+
   &:hover {
     .ri-arrow-right-up-line {
       transform: translateY(-3px) translateX(3px);
-      transition: transitionFunc(transform);
     }
 
     .ri-arrow-right-line {
       transform: translateY(0px) translateX(3px);
-      transition: transitionFunc(transform);
     }
 
     .ri-arrow-down-s-line {
       transform: rotate(180deg);
-      transition: transitionFunc(transform);
     }
 
     .text-link__text {
       color: var(--gray-text-color);
       transition: transitionFunc(color);
     }
+
+    .text-link__icon {
+      color: var(--gray-text-color);
+    }
   }
 
   &__icon {
     margin-left: var(--space-xxxs);
-    transform: translateY(0) translateX(0);
+  }
+
+  &__drawer {
+    position: absolute;
+    top: 100%;
+
+    min-width: 160px;
+    padding-top: var(--space-xs);
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__drawer__content {
+    @include elevation--level8;
+
+    border-radius: 4px;
+    padding: var(--space-md);
+    background-color: var(--surface-color);
+  }
+
+  &__drawer--visible {
+    animation: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+    visibility: visible;
   }
 }

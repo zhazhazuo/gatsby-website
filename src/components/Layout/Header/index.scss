@@ -80,11 +80,14 @@
       cursor: pointer;
 
       &:hover {
+        @include elevation--level4;
+
         color: var(--on-primary-color);
         background-color: var(--primary-color);
         transition: transitionFunc(background-color, 1000ms);
         transition: transitionFunc(border-color, 800ms);
         transition: transitionFunc(color);
+        transition: transitionFunc(box-shadow);
 
         .header__controller__icon {
           @include flip-vertical-bottom;
@@ -170,5 +173,15 @@
     display: flex;
     pointer-events: visible;
     grid-column: 7 / 14;
+  }
+}
+
+.production-list {
+  .production-item__wrapper {
+    margin-bottom: var(--space-xs);
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
   }
 }

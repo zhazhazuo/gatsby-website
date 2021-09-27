@@ -1,4 +1,10 @@
+import { compose, prop, tap } from "ramda"
 import { useEffect, useState } from "react"
+import { setGlobalData } from "./global"
+
+interface ITarget {
+  innerHeight: number
+}
 
 /**
  * hooks-获取当前是视口高度
@@ -9,18 +15,31 @@ export const useGetWindowHeight = () => {
     const { innerHeight } = window
     const [height, setHeight] = useState(innerHeight)
 
-    const onResize = () => setHeight(innerHeight)
+    setGlobalData("systemInfo", {
+      systemHeight: innerHeight,
+    })
+
+    const onResize = compose(
+      setHeight,
+      tap((v: number) =>
+        setGlobalData("systemInfo", {
+          systemHeight: v,
+        })
+      ),
+      prop("innerHeight"),
+      prop<"target", ITarget>("target")
+    )
 
     useEffect(() => {
-      window.addEventListener("resize", onResize)
-      return () => window.removeEventListener("resize", onResize)
+      window.addEventListener("resize", onResize as () => void)
+      return () => window.removeEventListener("resize", onResize as () => void)
     }, [onResize])
 
     return {
-      height: `${height}px`,
+      height: height,
     }
   }
   return {
-    height: "100%",
+    height: 0,
   }
 }

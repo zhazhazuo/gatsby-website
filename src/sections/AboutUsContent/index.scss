@@ -1,7 +1,5 @@
 .about-us-content__wrapper {
   position: relative;
-  // width: 100vw;
-  height: 100vh;
   overflow: hidden;
 
   border-top: 4px solid;
@@ -67,8 +65,9 @@
       z-index: -1;
       top: -100%;
       left: -100%;
-      width: 60vh;
-      height: 60vh;
+      width: 70%;
+      height: 0;
+      padding-bottom: 70%;
       border-radius: 50%;
       background-color: rgba($color: #3acf91, $alpha: 1);
     }

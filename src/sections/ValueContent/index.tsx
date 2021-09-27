@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { useGetWindowHeight } from "@/common/hooks"
 import "./index.scss"
 
 interface IProps {}
@@ -63,9 +64,15 @@ const valuesList: IValueItem[] = [
 ]
 
 const ValueContent: FC<Props> = (props) => {
+  const { height } = useGetWindowHeight()
+
   return (
-    <section className='value-content__wrapper'>
-      {/* TODO： aos失效，后续待修复 */}
+    <section
+      className='value-content__wrapper'
+      style={{
+        height: height * 0.8,
+      }}
+    >
       <div
         className='value-content__background'
         data-aos='fade-left'

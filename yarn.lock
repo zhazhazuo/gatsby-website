@@ -2036,6 +2036,11 @@ alphanum-sort@^1.0.2:
   resolved "https://registry.npm.taobao.org/alphanum-sort/download/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+animate.css@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npm.taobao.org/animate.css/download/animate.css-4.1.1.tgz#614ec5a81131d7e4dc362a58143f7406abd68075"
+  integrity sha1-YU7FqBEx1+TcNipYFD90BqvWgHU=
+
 anser@^2.0.1:
   version "2.0.2"
   resolved "https://registry.nlark.com/anser/download/anser-2.0.2.tgz#12bd6fd23a9ff08605b83972a10f97fd1970a32b"

@@ -2,7 +2,6 @@
   box-sizing: border-box;
   position: relative;
 
-  height: 80vh;
   overflow: hidden;
   background-color: var(--gray-background-color);
 }
@@ -84,7 +83,7 @@
 
 @include breakpoint(0, md) {
   .value-content__wrapper {
-    min-height: 80vh;
+    min-height: 80%;
     height: auto;
   }
 
@@ -95,6 +94,7 @@
     padding: var(--space-lg) 0;
 
     &__list {
+      margin-top: var(--space-lg);
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 0;
       grid-row-gap: var(--space-sm);

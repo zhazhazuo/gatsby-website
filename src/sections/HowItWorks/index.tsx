@@ -1,5 +1,6 @@
-import { map } from "ramda"
 import React, { FC } from "react"
+import { map } from "ramda"
+import { useGetWindowHeight } from "@/common/hooks"
 import "./index.scss"
 
 interface IProps {}
@@ -17,8 +18,15 @@ const planList = [
 ]
 
 const HowItWorks: FC<Props> = (props) => {
+  const { height } = useGetWindowHeight()
+
   return (
-    <section className='how-it-works'>
+    <section
+      className='how-it-works'
+      style={{
+        height: height * 0.4,
+      }}
+    >
       <div className='how-it-works__description' data-aos='fade-right'>
         <div className='how-it-works__title'>甘邻智慧社区</div>
         <ul className='how-it-works__points'>

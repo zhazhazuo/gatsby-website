@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { useGetWindowHeight } from "@/common/hooks"
 import "./index.scss"
 
 interface IProps {}
@@ -10,8 +11,15 @@ type DefaultProps = Readonly<typeof defaultProps>
 type Props = IProps & Partial<DefaultProps>
 
 const AboutUsContent: FC<Props> = (props) => {
+  const { height } = useGetWindowHeight()
+
   return (
-    <section className='about-us-content__wrapper'>
+    <section
+      className='about-us-content__wrapper'
+      style={{
+        height: height,
+      }}
+    >
       <div className='about-us-content gird'>
         <div className='about-us-content__text'>
           <div className='about-us-content__title' data-aos='fade-in'>

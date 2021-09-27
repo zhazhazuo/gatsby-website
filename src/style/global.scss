@@ -4,6 +4,8 @@
 @import "./tool.scss";
 
 :root {
+  --shadow-color: 0deg 0% 50%;
+
   --text-base-size: 1em;
   --text-scale-lg-ratio: 1.3125;
   --text-scale-sm-ratio: 1.1125;
@@ -32,6 +34,12 @@ body {
 }
 
 ul {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+p {
   margin-block: 0;
   margin-inline: 0;
   padding-inline: 0;
