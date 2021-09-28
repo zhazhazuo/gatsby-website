@@ -2,7 +2,6 @@ import React, { FC, Fragment, useEffect } from "react"
 import { Helmet } from "react-helmet"
 import AOS from "aos"
 import LogoIcon from "@/assets/logo.png"
-import { useGetWindowHeight } from "@/common/hooks"
 import "animate.css"
 import "../../../node_modules/aos/dist/aos.css"
 import Header from "./Header"
@@ -19,8 +18,6 @@ type Props = IProps & Partial<DefaultProps>
 
 const Layout: FC<Props> = (props) => {
   const { children } = props
-
-  useGetWindowHeight()
 
   useEffect(() => {
     AOS.init({ once: true })

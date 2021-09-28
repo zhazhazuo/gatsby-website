@@ -2,6 +2,8 @@ import { compose, prop, tap } from "ramda"
 import { useEffect, useState } from "react"
 import { setGlobalData } from "./global"
 
+const isBrowser = typeof window !== "undefined"
+
 interface ITarget {
   innerHeight: number
 }
@@ -11,14 +13,9 @@ interface ITarget {
  * @returns
  */
 export const useGetWindowHeight = () => {
-  if (typeof window !== "undefined") {
-    const { innerHeight } = window
-    const [height, setHeight] = useState(innerHeight)
+  const [height, setHeight] = useState(0)
 
-    setGlobalData("systemInfo", {
-      systemHeight: innerHeight,
-    })
-
+  useEffect(() => {
     const onResize = compose(
       setHeight,
       tap((v: number) =>
@@ -28,18 +25,19 @@ export const useGetWindowHeight = () => {
       ),
       prop("innerHeight"),
       prop<"target", ITarget>("target")
-    )
+    ) as (event: unknown) => void
 
-    useEffect(() => {
-      window.addEventListener("resize", onResize as () => void)
-      return () => window.removeEventListener("resize", onResize as () => void)
-    }, [onResize])
+    if (isBrowser) {
+      const { innerHeight } = window
 
-    return {
-      height: height,
+      setHeight(innerHeight)
+      window.addEventListener("resize", onResize)
     }
-  }
+
+    return () => window.removeEventListener("resize", onResize)
+  }, [isBrowser])
+
   return {
-    height: 0,
+    height,
   }
 }
