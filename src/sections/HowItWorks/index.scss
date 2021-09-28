@@ -89,6 +89,7 @@
 
 @include breakpoint(0, md) {
   .how-it-works {
+    height: auto !important;
     padding: var(--space-xl) 0;
     flex-direction: column;
 
