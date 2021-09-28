@@ -1,10 +1,9 @@
-import React, { FC, useState } from "react"
-import { useScrollPosition } from "@n8tb1t/use-scroll-position"
-import cls from "classnames"
-import { map } from "ramda"
+import React, { FC } from "react"
+import { map, compose } from "ramda"
 import TextLink, { Props as TextLinkProps } from "../../TextLink"
 import HeaderMenu from "./HeaderMenu"
-import ProductionItem from "./ProductionItem"
+import HeaderDrawer from "./HeaderDrawer"
+import useHeader, { barList } from "./logic"
 import "./index.scss"
 
 interface IProps {}
@@ -15,87 +14,37 @@ type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
 
-const barList: TextLinkProps[] = [
-  {
-    content: "产品方案",
-    drawerContent: (
-      <ul className='production-list'>
-        {Array(4)
-          .fill("")
-          .map((item, index) => (
-            <div className='production-item__wrapper' key={index}>
-              <ProductionItem
-                title='甘邻APP'
-                description='社区居民线上服务生活APP'
-                icon='https://wy.ganlin.com/logo.png'
-              />
-            </div>
-          ))}
-      </ul>
-    ),
-  },
-  {
-    content: "服务支持",
-  },
-  {
-    content: "客户案例",
-  },
-  {
-    content: "关于甘邻",
-  },
-]
-
-enum MenuShowStatusEnum {
-  normal = "normal",
-  visible = "visible",
-  hidden = "hidden",
-}
-
 const Header: FC<Props> = (props) => {
-  const [menuShowStatus, setMenuShowStatus] = useState(
-    MenuShowStatusEnum.normal
-  )
-  const [isShowElevation, setIsShowElevation] = useState(false)
-
-  useScrollPosition(({ prevPos, currPos }) => {
-    if (currPos.y < 0) {
-      setIsShowElevation(true)
-    } else {
-      setIsShowElevation(false)
-    }
-  })
-
-  const ClassName = cls("header__wrapper", {
-    "header__wrapper--show-elevation": isShowElevation,
-    "header__wrapper--with-menu": menuShowStatus === MenuShowStatusEnum.visible,
-  })
-  const MenuClassName = cls("header__menu", {
-    "header__menu--visible": menuShowStatus === MenuShowStatusEnum.visible,
-    "header__menu--hidden": menuShowStatus === MenuShowStatusEnum.hidden,
-  })
-  const HamburgerClassName = cls("header__hamburger__content", {
-    "header__hamburger__content--active":
-      menuShowStatus === MenuShowStatusEnum.visible,
-  })
-
-  const onMenuIconClickHandle = () => {
-    if (menuShowStatus === MenuShowStatusEnum.visible) {
-      setMenuShowStatus(MenuShowStatusEnum.hidden)
-    } else {
-      setMenuShowStatus(MenuShowStatusEnum.visible)
-    }
-  }
+  const {
+    isShowDrawer,
+    ClassName,
+    MenuClassName,
+    HamburgerClassName,
+    drawerContent,
+    setCurTabId,
+    onClickLogo,
+    onMouseEnterHandle,
+    onMouseLeaveHandle,
+    onMenuIconClickHandle,
+  } = useHeader()
 
   return (
-    <header className={ClassName}>
+    <header className={ClassName} onMouseLeave={onMouseLeaveHandle}>
       <div className='header gird'>
         <div className='header__logo'>
-          <div className='header__logo__img' />
+          <div className='header__logo__img' onClick={onClickLogo} />
         </div>
         <div className='header__bar'>
           {map(
             (item: TextLinkProps) => (
-              <TextLink key={item.content} {...item} />
+              <TextLink
+                key={item.content}
+                {...item}
+                onMouseEnter={compose(onMouseEnterHandle, () =>
+                  setCurTabId(item.id)
+                )}
+                onMouseLeave={onMouseLeaveHandle}
+              />
             ),
             barList
           )}
@@ -120,6 +69,11 @@ const Header: FC<Props> = (props) => {
       >
         <HeaderMenu />
       </div>
+      {isShowDrawer && (
+        <HeaderDrawer onMouseEnter={onMouseEnterHandle}>
+          {drawerContent}
+        </HeaderDrawer>
+      )}
     </header>
   )
 }

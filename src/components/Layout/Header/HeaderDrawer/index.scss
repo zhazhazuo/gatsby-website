@@ -1,0 +1,9 @@
+.header-drawer {
+  display: flex;
+  justify-content: center;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 70px;
+  padding: 0 var(--space-xs) var(--space-md);
+}

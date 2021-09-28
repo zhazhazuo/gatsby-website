@@ -1,0 +1,49 @@
+.info-item {
+  display: inline-block;
+
+  border-radius: 8px;
+  padding: var(--space-md);
+
+  cursor: pointer;
+
+  &:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: var(--surface-color);
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    margin-bottom: var(--space-xs);
+    border-radius: 38.2%;
+
+    font-size: var(--text-xl);
+
+    color: var(--surface-color);
+    background-color: var(--light-primary-color);
+  }
+
+  &__title {
+    @include Subtitle2;
+  }
+
+  &__description {
+    @include Caption;
+
+    margin: 4px 0 var(--space-xs) 0;
+  }
+
+  &__learn-more {
+    @include Caption;
+
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+}

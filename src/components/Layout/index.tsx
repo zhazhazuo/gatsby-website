@@ -1,6 +1,5 @@
 import React, { FC, Fragment, useEffect } from "react"
 import { Helmet } from "react-helmet"
-import AOS from "aos"
 import LogoIcon from "@/assets/logo.png"
 import "animate.css"
 import "../../../node_modules/aos/dist/aos.css"
@@ -18,10 +17,6 @@ type Props = IProps & Partial<DefaultProps>
 
 const Layout: FC<Props> = (props) => {
   const { children } = props
-
-  useEffect(() => {
-    AOS.init({ once: true })
-  }, [])
 
   return (
     <Fragment>

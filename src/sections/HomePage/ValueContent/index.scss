@@ -84,7 +84,7 @@
 @include breakpoint(0, md) {
   .value-content__wrapper {
     min-height: 80%;
-    height: auto;
+    height: auto !important;
   }
 
   .value-content {

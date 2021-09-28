@@ -4,13 +4,15 @@ import { createPropsGetter } from "@/common/utils"
 import "./index.scss"
 
 interface IProps {
+  id: string
   content: string
 }
 
 const defaultProps = {
-  drawerContent: "" as React.ReactNode,
   isDrawer: true,
   isOpenBlank: false,
+  onMouseEnter: () => {},
+  onMouseLeave: () => {},
 }
 
 type DefaultProps = Readonly<typeof defaultProps>
@@ -20,37 +22,23 @@ export type Props = IProps & Partial<DefaultProps>
 const getProps = createPropsGetter<DefaultProps>()
 
 const TextLink: FC<Props> = (props) => {
-  const { content, isOpenBlank, isDrawer, drawerContent } = getProps(props)
-  const [isShowDrawer, setIsShowDrawer] = useState(false)
+  const { content, isOpenBlank, isDrawer, onMouseEnter, onMouseLeave } =
+    getProps(props)
 
   const IconClassName = cls("text-link__icon", {
     "ri-arrow-right-line": !isDrawer && !isOpenBlank,
     "ri-arrow-right-up-line": isDrawer && isOpenBlank,
     "ri-arrow-down-s-line": isDrawer,
   })
-  const DrawerClassName = cls("text-link__drawer", {
-    "text-link__drawer--visible": isShowDrawer,
-  })
-
-  const onMouseOverHandle = () => {
-    setIsShowDrawer(true)
-  }
-
-  const onMouseOutHandle = () => {
-    setIsShowDrawer(false)
-  }
 
   return (
     <div
       className='text-link'
-      onMouseOver={onMouseOverHandle}
-      onMouseOut={onMouseOutHandle}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <span className='text-link__text'>{content}</span>
       <i className={IconClassName}></i>
-      <div className={DrawerClassName}>
-        <div className='text-link__drawer__content'>{drawerContent}</div>
-      </div>
     </div>
   )
 }

@@ -64,7 +64,7 @@
       position: absolute;
       z-index: -1;
       top: -100%;
-      left: -100%;
+      left: -50%;
       width: 70%;
       height: 0;
       padding-bottom: 70%;
@@ -83,7 +83,7 @@
       width: 100%;
       height: 100%;
 
-      background-image: url("../../assets/team.svg");
+      background-image: url("../../../assets/team.svg");
       background-size: cover;
       background-position: center 20%;
     }
@@ -91,6 +91,10 @@
 }
 
 @include breakpoint(0, md) {
+  .about-us-content__wrapper {
+    height: auto !important;
+  }
+
   .about-us-content {
     &__content {
       flex-direction: column;

@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
 
+  height: 100%;
+
   color: var(--text-color);
   cursor: pointer;
 
@@ -39,31 +41,5 @@
 
   &__icon {
     margin-left: var(--space-xxxs);
-  }
-
-  &__drawer {
-    position: absolute;
-    top: 100%;
-
-    min-width: 160px;
-    padding-top: var(--space-xs);
-
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &__drawer__content {
-    @include elevation--level8;
-
-    border-radius: 4px;
-    padding: var(--space-md);
-    background-color: var(--surface-color);
-  }
-
-  &__drawer--visible {
-    animation: fadeIn;
-    animation-fill-mode: forwards;
-    animation-duration: 500ms;
-    visibility: visible;
   }
 }

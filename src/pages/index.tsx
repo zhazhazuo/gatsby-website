@@ -1,10 +1,10 @@
 import React, { FC } from "react"
-import Hero from "@/sections/Hero"
-import HowItWorks from "@/sections/HowItWorks"
-import VideLink from "@/sections/VideoLink"
-import ValueContent from "@/sections/ValueContent"
-import ObjectContent from "@/sections/ObjectContent"
-import AboutUsContent from "@/sections/AboutUsContent"
+import Hero from "@/sections/HomePage/Hero"
+import HowItWorks from "@/sections/HomePage/HowItWorks"
+import VideLink from "@/sections/HomePage/VideoLink"
+import ValueContent from "@/sections/HomePage/ValueContent"
+import ObjectContent from "@/sections/HomePage/ObjectContent"
+import AboutUsContent from "@/sections/HomePage/AboutUsContent"
 import "./index.scss"
 
 interface IProps {}

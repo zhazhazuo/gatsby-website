@@ -21,7 +21,7 @@
 
 @include breakpoint(0, md) {
   .object-content__wrapper {
-    height: auto;
+    height: auto !important;
     padding-bottom: var(--space-lg);
   }
 

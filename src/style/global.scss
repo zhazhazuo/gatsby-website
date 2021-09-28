@@ -11,6 +11,10 @@
   --text-scale-sm-ratio: 1.1125;
   --text-scale-ratio: 1.15;
 
+  --text-xxs: calc(
+    (var(--text-base-size) / var(--text-scale-sm-ratio)) /
+      var(--text-scale-sm-ratio) / var(--text-scale-sm-ratio)
+  ); // 12px
   --text-xs: calc(
     (var(--text-base-size) / var(--text-scale-sm-ratio)) /
       var(--text-scale-sm-ratio)

@@ -1,5 +1,6 @@
-import { compose, prop, tap } from "ramda"
 import { useEffect, useState } from "react"
+import { compose, prop, tap } from "ramda"
+import Aos from "aos"
 import { setGlobalData } from "./global"
 
 const isBrowser = typeof window !== "undefined"
@@ -13,7 +14,8 @@ interface ITarget {
  * @returns
  */
 export const useGetWindowHeight = () => {
-  const [height, setHeight] = useState(0)
+  // 注意：此处初始高度为999，目的在于避免aos动画初始化异常
+  const [height, setHeight] = useState(9999)
 
   useEffect(() => {
     const onResize = compose(
@@ -36,6 +38,10 @@ export const useGetWindowHeight = () => {
 
     return () => window.removeEventListener("resize", onResize)
   }, [isBrowser])
+
+  useEffect(() => {
+    Aos.init({ once: true })
+  }, [height])
 
   return {
     height,
