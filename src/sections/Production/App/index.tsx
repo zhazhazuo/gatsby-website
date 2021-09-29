@@ -36,13 +36,14 @@ const App: FC<Props> = (props) => {
             </CustomButton>
           </div>
         </div>
-        <div
-          className='app__show-img'
-          data-aos='fade-right'
-          data-aos-duration='700'
-        >
-          <div className='app__show-img__background' />
-          <div className='app__show-img__content'>
+        <div className='app__show-img'>
+          <div className='app__show-img__background' data-aos='fade-right' />
+
+          <div
+            className='app__show-img__content'
+            data-aos='fade-right'
+            data-aos-delay='300'
+          >
             <div className='app__show-img__mobile'></div>
             <div className='app__show-img__cut'></div>
           </div>

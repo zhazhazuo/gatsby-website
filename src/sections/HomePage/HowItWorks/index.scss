@@ -101,5 +101,9 @@
     &__road-map {
       flex-direction: column;
     }
+
+    &__icon {
+      margin: var(--space-lg) 0;
+    }
   }
 }

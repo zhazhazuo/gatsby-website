@@ -1,0 +1,38 @@
+.tab-item {
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: var(--space-xs);
+  }
+
+  &__icon {
+    width: var(--icon-lg);
+    height: 100%;
+    font-size: var(--text-lg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    @include Subtitle1;
+  }
+
+  &__indicator {
+    box-sizing: border-box;
+    margin-top: var(--space-sm);
+    height: 4px;
+
+    &--active {
+      background-color: var(--primary-color);
+      animation: bounceIn;
+      animation-duration: 800ms;
+    }
+  }
+}

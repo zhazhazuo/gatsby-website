@@ -43,7 +43,6 @@ const Header: FC<Props> = (props) => {
                 onMouseEnter={compose(onMouseEnterHandle, () =>
                   setCurTabId(item.id)
                 )}
-                onMouseLeave={onMouseLeaveHandle}
               />
             ),
             barList

@@ -1,0 +1,34 @@
+.module-block {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-column-gap: 2.19%;
+
+  &__show-img {
+    @include elevation--level4;
+
+    grid-column: 2 / 9;
+    height: 400px;
+    align-self: center;
+    border-radius: 16px;
+    background-image: url("../../../../assets/management-system-pay.png");
+    background-size: cover;
+
+    margin-right: var(--space-xxl);
+  }
+
+  &__description {
+    grid-column: 9 / 13;
+    align-self: center;
+
+    .module-block__title {
+      @include H5;
+      margin-bottom: var(--space-md);
+    }
+
+    &-content {
+      @include Body1;
+      color: var(--gray-text-color);
+    }
+  }
+}

@@ -60,27 +60,6 @@ const productionList: InfoItemProps[] = [
   },
 ]
 
-const drawerContentMap: {
-  [key: string]: React.ReactNode
-} = {
-  [BarIdEnum.production]: (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${productionList.length}, 1fr)`,
-        gridColumnGap: "2%",
-      }}
-    >
-      {productionList.map((productionItem) => (
-        <InfoItem key={productionItem.title} {...productionItem} />
-      ))}
-    </div>
-  ),
-  [BarIdEnum.example]: <div></div>,
-  [BarIdEnum.aboutUs]: <div></div>,
-  [BarIdEnum.support]: <div></div>,
-}
-
 enum MenuShowStatusEnum {
   normal = "normal",
   visible = "visible",
@@ -94,6 +73,34 @@ const useHeader = () => {
   const [isShowElevation, setIsShowElevation] = useState(false)
   const [isShowDrawer, setIsShowDrawer] = useState(false)
   const [curTabId, setCurTabId] = useState("")
+
+  const drawerContentMap: {
+    [key: string]: React.ReactNode
+  } = {
+    [BarIdEnum.production]: (
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${productionList.length}, 1fr)`,
+          gridColumnGap: "2%",
+        }}
+      >
+        {productionList.map((productionItem) => (
+          <InfoItem
+            key={productionItem.title}
+            {...productionItem}
+            onClick={() => {
+              productionItem.onClick()
+              setIsShowDrawer(false)
+            }}
+          />
+        ))}
+      </div>
+    ),
+    [BarIdEnum.example]: <div></div>,
+    [BarIdEnum.aboutUs]: <div></div>,
+    [BarIdEnum.support]: <div></div>,
+  }
 
   useScrollPosition(({ prevPos, currPos }) => {
     if (currPos.y < 0) {
@@ -134,6 +141,7 @@ const useHeader = () => {
 
   const onClickLogo = () => {
     navigate("/")
+    setIsShowDrawer(false)
   }
 
   return {
