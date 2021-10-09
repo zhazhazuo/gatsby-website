@@ -30,9 +30,9 @@ export const useGetWindowHeight = () => {
     ) as (event: unknown) => void
 
     if (isBrowser) {
-      const { outerHeight } = window
+      const { innerHeight } = window
 
-      setHeight(outerHeight)
+      setHeight(innerHeight)
       window.addEventListener("resize", onResize)
     }
 
@@ -44,6 +44,6 @@ export const useGetWindowHeight = () => {
   }, [height])
 
   return {
-    height: window.innerHeight <= 789 ? 789 : window.innerHeight,
+    height: height <= 789 ? 789 : height,
   }
 }
