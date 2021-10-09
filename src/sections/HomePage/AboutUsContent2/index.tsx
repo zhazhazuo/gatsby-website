@@ -20,15 +20,15 @@ const AboutUsContent: FC<Props> = (props) => {
         height: height * 0.6,
       }}
     >
-      <p
+      <div
         className='about-us-content__title'
         data-aos='fade'
         data-aos-duration='600'
       >
         <p>甘邻科技,</p>
         <p>致力于社区数字化和在线生活服务</p>
-      </p>
-      <p
+      </div>
+      <div
         className='about-us-content__description'
         data-aos='fade'
         data-aos-duration='600'
@@ -41,7 +41,7 @@ const AboutUsContent: FC<Props> = (props) => {
           在企业软件、数字化转型
           、电商、供应链、智能硬件、协同办公等领域，有十年以上的经验。
         </p>
-      </p>
+      </div>
       <div
         className='about-us-content__button'
         data-aos='zoom-in'
