@@ -19,10 +19,10 @@
   }
 }
 
-@include breakpoint(0, md) {
+@include breakpoint(0, sm) {
   .object-content__wrapper {
     height: auto !important;
-    padding-bottom: var(--space-lg);
+    padding: var(--space-md) 0;
   }
 
   .object-content {

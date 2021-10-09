@@ -49,17 +49,16 @@
   }
 
   &__bar {
-    grid-column: 6 / 11;
+    grid-column: 6 / 12;
     grid-row: 1 / 13;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-items: end;
   }
 
   &__controller {
-    grid-column: 11 / 14;
+    grid-column: 11 / 15;
     grid-row: 1 / 13;
 
     display: flex;

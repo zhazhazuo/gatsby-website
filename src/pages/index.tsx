@@ -1,10 +1,13 @@
 import React, { FC } from "react"
-import Hero from "@/sections/HomePage/Hero"
-import HowItWorks from "@/sections/HomePage/HowItWorks"
+// import Hero from "@/sections/HomePage/Hero"
+import Hero from "@/sections/HomePage/Hero2"
+// import HowItWorks from "@/sections/HomePage/HowItWorks"
+import HowItWorks from "@/sections/HomePage/HowItWorks2"
 import VideLink from "@/sections/HomePage/VideoLink"
-import ValueContent from "@/sections/HomePage/ValueContent"
+import ValueContent from "@/sections/HomePage/ValueContent2"
 import ObjectContent from "@/sections/HomePage/ObjectContent"
-import AboutUsContent from "@/sections/HomePage/AboutUsContent"
+// import AboutUsContent from "@/sections/HomePage/AboutUsContent"
+import AboutUsContent from "@/sections/HomePage/AboutUsContent2"
 import "./index.scss"
 
 interface IProps {}
@@ -20,7 +23,7 @@ const HomePage: FC<Props> = (props) => {
     <div className='home-page'>
       <Hero />
       <HowItWorks />
-      <VideLink />
+      {/* <VideLink /> */}
       <ValueContent />
       <ObjectContent />
       <AboutUsContent />

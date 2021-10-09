@@ -7,6 +7,7 @@ import InfoItem, { Props as InfoItemProps } from "./InfoItem"
 
 enum BarIdEnum {
   production = "production",
+  plan = "plan",
   support = "support",
   example = "example",
   aboutUs = "aboutUs",
@@ -16,6 +17,10 @@ export const barList: TextLinkProps[] = [
   {
     id: BarIdEnum.production,
     content: "产品方案",
+  },
+  {
+    id: BarIdEnum.plan,
+    content: "解决方案",
   },
   {
     id: BarIdEnum.support,

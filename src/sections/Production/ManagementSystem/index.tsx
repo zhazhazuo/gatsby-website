@@ -50,7 +50,7 @@ const ManagementSystem: FC<Props> = (props) => {
   const { height } = useGetWindowHeight()
   return (
     <Fragment>
-      <div
+      <section
         className='management-system__wrapper'
         style={{
           height: height * 0.8,
@@ -94,7 +94,7 @@ const ManagementSystem: FC<Props> = (props) => {
             ></div>
           </div>
         </div>
-      </div>
+      </section>
       <div
         className='management-system__detail'
         style={{

@@ -34,7 +34,12 @@ const Header: FC<Props> = (props) => {
         <div className='header__logo'>
           <div className='header__logo__img' onClick={onClickLogo} />
         </div>
-        <div className='header__bar'>
+        <div
+          className='header__bar'
+          style={{
+            gridTemplateColumns: `repeat(${barList.length}, 1fr)`,
+          }}
+        >
           {map(
             (item: TextLinkProps) => (
               <TextLink

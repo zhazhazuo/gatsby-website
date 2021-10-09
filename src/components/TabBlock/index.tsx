@@ -10,14 +10,16 @@ interface IProps {
   tabList: ITabItem[]
 }
 
-const defaultProps = {}
+const defaultProps = {
+  tabHeaderColor: "#f6f8fc",
+}
 
 type DefaultProps = Readonly<typeof defaultProps>
 
 export type Props = IProps & Partial<DefaultProps>
 
 const TabBlock: FC<Props> = (props) => {
-  const { tabList } = props
+  const { tabList, tabHeaderColor } = props
   const [activeIndex, setActiveIndex] = useState(0)
 
   const onTabItemClick = (curIndex: number, stateIndex: number) => {
@@ -27,7 +29,12 @@ const TabBlock: FC<Props> = (props) => {
 
   return (
     <div className='tab-block'>
-      <div className='tab-block__tab-list-wrapper'>
+      <div
+        className='tab-block__tab-list-wrapper'
+        style={{
+          backgroundColor: tabHeaderColor,
+        }}
+      >
         <div
           className='tab-block__tab-list'
           style={{

@@ -49,14 +49,14 @@
 @mixin Body1 {
   font-size: var(--text-md);
   font-family: "Noto Sans SC", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 3px;
   line-height: 1.5;
 }
 @mixin Body2 {
   font-size: var(--text-sm);
   font-family: "Noto Sans SC", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1.5px;
   line-height: 1.5;
 }

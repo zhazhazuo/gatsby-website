@@ -87,7 +87,7 @@
   }
 }
 
-@include breakpoint(0, md) {
+@include breakpoint(sm, md) {
   .how-it-works {
     height: auto !important;
     padding: var(--space-xl) 0;

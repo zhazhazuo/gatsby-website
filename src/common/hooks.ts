@@ -6,7 +6,7 @@ import { setGlobalData } from "./global"
 const isBrowser = typeof window !== "undefined"
 
 interface ITarget {
-  outerHeight: number
+  innerHeight: number
 }
 
 /**
@@ -25,7 +25,7 @@ export const useGetWindowHeight = () => {
           systemHeight: v,
         })
       ),
-      prop("outerHeight"),
+      prop("innerHeight"),
       prop<"target", ITarget>("target")
     ) as (event: unknown) => void
 
@@ -44,6 +44,6 @@ export const useGetWindowHeight = () => {
   }, [height])
 
   return {
-    height,
+    height: window.innerHeight <= 789 ? 789 : window.innerHeight,
   }
 }

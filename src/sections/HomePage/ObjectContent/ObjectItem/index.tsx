@@ -28,15 +28,12 @@ const ObjectItem: FC<Props> = (props) => {
 
   return (
     <div className={ClassName}>
-      <div className='object-item__img-wrapper'>
-        <div
-          className='object-item__img'
-          style={{
-            backgroundImage: `url(${img})`,
-          }}
-          data-aos={isReverse ? "fade-left" : "fade-right"}
-        ></div>
-        {/* <div className='object-item__img__background'></div> */}
+      <div
+        className='object-item__img-wrapper'
+        data-aos={isReverse ? "fade-left" : "fade-right"}
+      >
+        <img className='object-item__img' src={img} alt='' />
+        <div className='object-item__img-background' />
       </div>
 
       <div className='object-item__description'>
