@@ -12,6 +12,8 @@
   }
 
   &__img {
+    @include elevation--level8;
+
     position: absolute;
     z-index: 2;
     width: 100%;
@@ -21,6 +23,7 @@
   }
 
   &__img-background {
+    @include elevation--level4;
     position: absolute;
     top: 16%;
     right: -7%;

@@ -1,4 +1,6 @@
 .module-block {
+  max-width: 1280px;
+  margin: 0 auto;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));

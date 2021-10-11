@@ -9,10 +9,11 @@ type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
 
-const Case: FC<Props> = (props) => {
-  return <div className='case'></div>
+const Text: FC<Props> = (props) => {
+  const { children } = props
+  return <div className='text'>{children}</div>
 }
 
-Case.defaultProps = defaultProps
+Text.defaultProps = defaultProps
 
-export default Case
+export default Text

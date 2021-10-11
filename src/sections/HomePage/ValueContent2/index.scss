@@ -7,6 +7,7 @@
 }
 
 .value-content__background {
+  @include elevation--level4;
   position: absolute;
   z-index: 1;
   top: -24%;

@@ -30,6 +30,8 @@
     justify-content: center;
 
     &__img {
+      @include elevation--level8;
+
       position: relative;
       width: 400px;
       height: 80%;

@@ -1,0 +1,16 @@
+.custom-tag {
+  @include Caption;
+
+  display: inline-block;
+  padding: var(--space-xxs) var(--space-xs);
+  border-radius: 4px;
+
+  background-color: var(--light-primary-color);
+  color: var(--on-primary-color);
+
+  margin-right: var(--space-sm);
+
+  &:last-of-type {
+    margin-right: none;
+  }
+}

@@ -2,7 +2,12 @@ import React, { FC, Fragment } from "react"
 import { useGetWindowHeight } from "@/common/hooks"
 import CustomButton from "@/components/CustomButton"
 import TabBlock from "@/components/TabBlock"
-import AppModuleBlock from "./AppModuleBlock"
+import AppShotSwiper from "@/components/AppShotSwiper"
+import Img1 from "@/assets/appScreenshot/1.png"
+import Img2 from "@/assets/appScreenshot/2.png"
+import Img3 from "@/assets/appScreenshot/3.png"
+import Img4 from "@/assets/appScreenshot/4.png"
+import Img5 from "@/assets/appScreenshot/5.png"
 import "./index.scss"
 
 interface IProps {}
@@ -12,6 +17,8 @@ const defaultProps = {}
 type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
+
+const appShotList = [Img4, Img5, Img1, Img2, Img3, Img4, Img5, Img1, Img2]
 
 const App: FC<Props> = (props) => {
   const { height } = useGetWindowHeight()
@@ -57,19 +64,14 @@ const App: FC<Props> = (props) => {
           </div>
         </div>
       </section>
-      <div
-        className='app__show-detail'
-        style={{
-          height: height * 0.8,
-        }}
-      >
+      <div className='app__show-detail'>
         <TabBlock
           tabHeaderColor='#fff'
           tabList={[
             {
               text: "应用页面展示",
               icon: <i className='ri-archive-fill'></i>,
-              content: <AppModuleBlock />,
+              content: <AppShotSwiper shotList={appShotList} />,
             },
           ]}
         />

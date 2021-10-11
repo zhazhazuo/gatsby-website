@@ -1,3 +1,4 @@
+/* eslint-disable node/no-path-concat */
 const path = require("path")
 
 const gatsbyRequiredRules = path.join(
@@ -52,6 +53,23 @@ module.exports = {
         extensions: ["js", "jsx", "ts", "tsx"],
         exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        footnotes: true,
+        gfm: true,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "case",
+        path: `${__dirname}/src/case`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
     },
   ],
 }

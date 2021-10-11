@@ -14,8 +14,11 @@
 
 .header__wrapper--show-elevation {
   @include elevation--level4;
-  backdrop-filter: saturate(180%) blur(20px);
-  background-color: rgba(255, 255, 255, 0.62);
+
+  // TODO: 待确定Header是否使用毛玻璃效果
+  // backdrop-filter: saturate(180%) blur(20px);
+  // background-color: rgba(255, 255, 255, 0.62);
+  background-color: var(--white-color);
 }
 
 .header__wrapper--with-menu {
@@ -95,7 +98,7 @@
     }
 
     &__icon {
-      margin-left: var(--space-xxxs);
+      margin-left: var(--space-xxs);
     }
   }
 

@@ -23,14 +23,19 @@
     "aos": "^2.3.4",
     "classnames": "^2.3.1",
     "gatsby": "^3.13.1",
+    "gatsby-plugin-mdx": "^2.14.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-remark": "^4.11.0",
     "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "remixicon": "^2.5.0"
+    "remixicon": "^2.5.0",
+    "swiper": "^7.0.8"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
+    "@types/mdx-js__react": "^1.5.4",
     "@types/ramda": "^0.27.44",
     "@types/react-helmet": "^6.1.2",
     "eslint": "^7.32.0",

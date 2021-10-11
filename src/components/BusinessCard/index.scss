@@ -1,0 +1,36 @@
+.business-card {
+  @include elevation--level4;
+  padding: var(--space-lg);
+  border-radius: 8px;
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__avatar {
+    @include elevation--level4;
+    width: 60px;
+    height: 60px;
+    border-radius: 32.8%;
+    margin-right: var(--space-md);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://p6-hera.byteimg.com/tos-cn-i-jbbdkfciu3/369a62fa0f8242cb8ba3e69801187824~tplv-jbbdkfciu3-webp:60:60.webp");
+  }
+
+  &__name {
+    @include Subtitle1;
+  }
+
+  &__tag {
+    @include Body2;
+    color: var(--gray-text-color);
+  }
+
+  &__description {
+    @include Body2;
+    color: var(--light-text-color);
+  }
+}
