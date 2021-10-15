@@ -1,0 +1,49 @@
+.module-grid {
+  box-sizing: border-box;
+  max-width: 1280px;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-top: var(--space-lg);
+
+  display: grid;
+  grid-column-gap: 2.19%;
+  grid-row-gap: 2.19%;
+}
+
+.grid-item {
+  box-sizing: border-box;
+  padding: var(--space-sm);
+  border-radius: 4px;
+  display: flex;
+
+  &__icon {
+    flex: 1;
+    display: flex;
+
+    font-size: 40px;
+    color: var(--primary-color);
+  }
+
+  &__description {
+    flex: 3;
+  }
+
+  &__title {
+    @include Subtitle1;
+    font-weight: 400;
+  }
+
+  &__text {
+    @include Body2;
+
+    margin-top: var(--text-xxs);
+    color: var(--light-text-color);
+  }
+}
+
+@include breakpoint(0, sm) {
+  .module-grid {
+    display: block;
+  }
+}

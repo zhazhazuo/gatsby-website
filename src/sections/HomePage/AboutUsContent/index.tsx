@@ -20,7 +20,7 @@ const AboutUsContent: FC<Props> = (props) => {
         height: height,
       }}
     >
-      <div className='about-us-content gird'>
+      <div className='about-us-content grid'>
         <div className='about-us-content__text'>
           <div className='about-us-content__title' data-aos='fade-in'>
             关于甘邻

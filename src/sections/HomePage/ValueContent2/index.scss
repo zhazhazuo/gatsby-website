@@ -4,6 +4,8 @@
 
   overflow: hidden;
   background-color: var(--gray-background-color);
+
+  min-width: 1280px;
 }
 
 .value-content__background {
@@ -99,6 +101,7 @@
   .value-content__wrapper {
     box-sizing: border-box;
     height: auto !important;
+    min-width: auto;
   }
 
   .value-content__background {

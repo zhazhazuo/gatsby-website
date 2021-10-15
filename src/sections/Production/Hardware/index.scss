@@ -1,0 +1,18 @@
+.hardware {
+  &__title {
+    @include H3;
+    grid-column: 1 / 13;
+    grid-row: 2 /4;
+
+    text-align: center;
+  }
+
+  &__img {
+    grid-column: 1 / 13;
+    grid-row: 4 / 12;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../../assets/section/Hardware/device.png");
+  }
+}

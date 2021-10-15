@@ -10,7 +10,8 @@
     @include elevation--level4;
 
     grid-column: 2 / 9;
-    height: 400px;
+    height: 0px;
+    padding-bottom: 50%;
     align-self: center;
     border-radius: 12px;
     background-image: url("../../../../assets/management-system-pay.png");

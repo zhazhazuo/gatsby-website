@@ -18,7 +18,7 @@ interface IProps {
 }
 
 const defaultProps = {
-  slidesPerView: 5,
+  slidesPerView: 7,
 }
 
 type DefaultProps = Readonly<typeof defaultProps>
@@ -34,10 +34,10 @@ const AppShotSwiper: FC<Props> = (props) => {
       swiper: SwiperCore
     }
   )
-  const [curIndex, setCurIndex] = useState((slidesPerView % 2) + 1)
+  const [curIndex, setCurIndex] = useState((slidesPerView % 2) + 2)
 
   const onAutoplayHandle = (e: SwiperCore) => {
-    const base = e.activeIndex - slidesPerView + 2
+    const base = e.activeIndex - slidesPerView + 3
     setCurIndex(base < shotList.length ? base : base - shotList.length)
   }
 
@@ -52,7 +52,7 @@ const AppShotSwiper: FC<Props> = (props) => {
       swiperRef.current.swiper.slideTo(9, 0)
       return
     }
-    swiperRef.current.swiper.slideTo(e.clickedIndex - 2)
+    swiperRef.current.swiper.slideTo(e.clickedIndex - 3)
   }
 
   return (
@@ -69,7 +69,7 @@ const AppShotSwiper: FC<Props> = (props) => {
       <Swiper
         ref={swiperRef}
         slidesPerView={slidesPerView}
-        spaceBetween={30}
+        spaceBetween={0}
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
@@ -88,6 +88,7 @@ const AppShotSwiper: FC<Props> = (props) => {
                 index === curIndex ? "swiper-slide__content--active" : ""
               }`}
             >
+              <div className='swiper-slide__content__img__wrapper' />
               <div
                 style={{
                   backgroundImage: `url(${item})`,

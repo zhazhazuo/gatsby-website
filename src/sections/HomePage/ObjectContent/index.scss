@@ -3,6 +3,7 @@
 
   overflow: hidden;
   background-color: var(--surface-color);
+  min-width: 1280px;
 }
 
 .object-content {
@@ -21,6 +22,7 @@
 
 @include breakpoint(0, sm) {
   .object-content__wrapper {
+    min-width: auto;
     height: auto !important;
     padding: var(--space-md) 0;
   }

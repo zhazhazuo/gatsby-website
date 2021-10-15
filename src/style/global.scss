@@ -53,7 +53,7 @@ li {
   list-style: none;
 }
 
-.gird {
+.grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-column-gap: 2.19%;
@@ -73,9 +73,9 @@ li {
     font-size: 14px;
   }
 
-  .gird {
+  .grid {
     margin: 0 16px;
-    .gird--6 {
+    .grid--6 {
       grid-column-start: 1;
       grid-column-end: 13;
     }
@@ -83,13 +83,13 @@ li {
 }
 
 @include breakpoint(xs, xl) {
-  .gird {
+  .grid {
     margin: 0 32px;
   }
 }
 
 @include breakpoint(xl) {
-  .gird {
+  .grid {
     margin: 0 auto;
   }
 }

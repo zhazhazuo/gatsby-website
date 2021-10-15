@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 1280px;
 
   &__header {
     position: fixed;
@@ -14,5 +15,11 @@
 
   &__content {
     box-sizing: border-box;
+  }
+}
+
+@include breakpoint(0, sm) {
+  .layout {
+    min-width: auto;
   }
 }

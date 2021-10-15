@@ -17,7 +17,7 @@ const Hero: FC<Props> = (props) => {
   return (
     <div className='hero__wrapper'>
       <div
-        className='hero gird'
+        className='hero grid'
         style={{
           height,
         }}

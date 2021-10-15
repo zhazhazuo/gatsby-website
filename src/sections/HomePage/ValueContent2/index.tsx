@@ -79,7 +79,7 @@ const ValueContent: FC<Props> = (props) => {
         data-aos-once='true'
         data-aos-delay='700'
       />
-      <div className='value-content gird'>
+      <div className='value-content grid'>
         <div className='value-content__title'>
           <span className='value-content__title-text'>我们能带来什么</span>
           <span className='value-content__label'>借助甘邻智慧社区方案</span>

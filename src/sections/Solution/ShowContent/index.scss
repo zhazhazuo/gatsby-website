@@ -1,0 +1,15 @@
+.show-content {
+  position: relative;
+  top: 10%;
+
+  &__background {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+  }
+
+  &__img {
+    @include elevation--level8;
+    border-radius: 12px;
+  }
+}

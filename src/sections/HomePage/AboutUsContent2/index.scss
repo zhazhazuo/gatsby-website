@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
 
-  width: 100vw;
+  min-width: 1280px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../../../assets/promo-bg-img2.jpg");
@@ -27,6 +27,7 @@
 
 @include breakpoint(0, sm) {
   .about-us-content {
+    min-width: auto;
     box-sizing: border-box;
     padding: 0 var(--space-md);
 

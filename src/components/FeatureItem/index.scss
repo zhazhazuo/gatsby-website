@@ -1,0 +1,40 @@
+.feature-item {
+  display: flex;
+  margin-bottom: var(--space-md);
+
+  &__img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-border-color);
+    margin-right: var(--space-md);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+    color: var(--light-primary-color);
+  }
+
+  &__description {
+    flex: 1;
+  }
+
+  &__title {
+    @include Subtitle1;
+    font-weight: 400;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__text {
+    @include Body1;
+    color: var(--gray-text-color);
+  }
+}
+
+@include breakpoint(0, sm) {
+  .feature-item {
+    width: 100%;
+  }
+}

@@ -1,4 +1,49 @@
 .solution {
   width: 100vw;
   overflow: hidden;
+
+  &__swiper {
+    height: 100%;
+  }
+
+  &__catalogue {
+    position: fixed;
+    z-index: 999;
+    transform: translateY(-50%);
+    top: 50%;
+    right: var(--space-lg);
+  }
+}
+
+.catalogue__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: var(--space-lg);
+  cursor: pointer;
+  transition: transitionFunc(all, 400ms);
+  opacity: 0.5;
+}
+
+.catalogue__tag {
+  width: 20px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: var(--space-xs);
+
+  background-color: var(--light-primary-color);
+  transition: transitionFunc(all, 400ms);
+}
+
+.catalogue__text {
+  @include Body2;
+  color: var(--gray-text-color);
+}
+
+.catalogue__item--active {
+  opacity: 1;
+
+  .catalogue__tag {
+    width: 32px;
+  }
 }

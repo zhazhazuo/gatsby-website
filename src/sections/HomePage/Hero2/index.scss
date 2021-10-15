@@ -1,4 +1,6 @@
 .hero__wrapper {
+  min-width: 1280px;
+
   background-color: var(--gray-background-color);
   overflow: hidden;
 }
@@ -131,6 +133,10 @@
 }
 
 @include breakpoint(0, sm) {
+  .hero__wrapper {
+    min-width: auto;
+  }
+
   .hero__title {
     @include H2;
   }

@@ -30,7 +30,7 @@ const Header: FC<Props> = (props) => {
 
   return (
     <header className={ClassName} onMouseLeave={onMouseLeaveHandle}>
-      <div className='header gird'>
+      <div className='header grid'>
         <div className='header__logo'>
           <div className='header__logo__img' onClick={onClickLogo} />
         </div>
@@ -45,9 +45,10 @@ const Header: FC<Props> = (props) => {
               <TextLink
                 key={item.content}
                 {...item}
-                onMouseEnter={compose(onMouseEnterHandle, () =>
+                onMouseEnter={compose(onMouseEnterHandle, () => {
                   setCurTabId(item.id)
-                )}
+                  return item.id
+                })}
               />
             ),
             barList
@@ -74,7 +75,7 @@ const Header: FC<Props> = (props) => {
         <HeaderMenu />
       </div>
       {isShowDrawer && (
-        <HeaderDrawer onMouseEnter={onMouseEnterHandle}>
+        <HeaderDrawer onMouseEnter={() => onMouseEnterHandle()}>
           {drawerContent}
         </HeaderDrawer>
       )}

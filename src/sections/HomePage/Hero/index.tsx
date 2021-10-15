@@ -32,7 +32,7 @@ const Hero: FC<Props> = (props) => {
         data-aos-duration='2000'
       ></div>
       <div className='hero__background' />
-      <div className='hero__content gird'>
+      <div className='hero__content grid'>
         <div
           className='hero__description'
           data-aos='fade-right'

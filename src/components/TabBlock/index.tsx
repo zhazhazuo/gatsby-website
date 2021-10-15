@@ -45,7 +45,7 @@ const TabBlock: FC<Props> = (props) => {
             <TabItem
               {...item}
               key={index}
-              active={index === activeIndex}
+              active={tabList.length > 1 && index === activeIndex}
               onClick={() => onTabItemClick(index, activeIndex)}
             />
           ))}
