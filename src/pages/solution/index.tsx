@@ -3,26 +3,29 @@ import cls from "classnames"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SwiperCore from "swiper"
 import "swiper/css"
+import { createPropsGetter } from "@/common/utils"
 import { useGetWindowHeight } from "@/common/hooks"
 import SolutionItem from "@/sections/Solution/SolutionItem"
-import { solutionList } from "./config"
+import { solutionList } from "../../sections/Solution/config"
 import "./index.scss"
 
 SwiperCore.use([])
 
-interface IProps {
+interface IProps {}
+
+const defaultProps = {
   location: {
     state: {
-      index: number
-    }
-  }
+      index: 0,
+    },
+  },
 }
-
-const defaultProps = {}
 
 type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
+
+const getProps = createPropsGetter<DefaultProps>()
 
 interface ICatalogueItemProps {
   catalogueIndex: number
@@ -52,13 +55,8 @@ const CatalogueItem: FC<ICatalogueItemProps> = ({
 const Solution: FC<Props> = (props) => {
   const {
     location: { state },
-  } = props
-  const { index } =
-    state === null
-      ? {
-          index: 0,
-        }
-      : state
+  } = getProps(props)
+  const index = state?.index || 0
   const { height } = useGetWindowHeight()
   const swiperRef = useRef(
     null as unknown as {
