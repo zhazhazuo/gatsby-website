@@ -5,7 +5,9 @@ import "remixicon/fonts/remixicon.css"
 import "@/style/global.scss"
 
 const wrapPageElement = ({ element, props }) => {
-  return <Layout>{element}</Layout>
+  return (
+    <Layout hiddenFooter={props.path.includes("solution")}>{element}</Layout>
+  )
 }
 
 const wrapRootElement = ({ element }) => (

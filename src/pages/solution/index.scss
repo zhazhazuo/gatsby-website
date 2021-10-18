@@ -47,3 +47,11 @@
     width: 32px;
   }
 }
+
+@include breakpoint(0, sm) {
+  .solution {
+    &__catalogue {
+      display: none;
+    }
+  }
+}

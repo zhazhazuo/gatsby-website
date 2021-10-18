@@ -8,16 +8,11 @@
   background-color: transparent;
   backdrop-filter: blur(0);
   box-shadow: none;
-
-  transition: transitionFunc(all, 600ms);
 }
 
 .header__wrapper--show-elevation {
   @include elevation--level4;
 
-  // TODO: 待确定Header是否使用毛玻璃效果
-  // backdrop-filter: saturate(180%) blur(20px);
-  // background-color: rgba(255, 255, 255, 0.62);
   background-color: var(--white-color);
 }
 
@@ -47,7 +42,7 @@
 
       background-repeat: no-repeat;
       background-size: contain;
-      background-image: url("https://wy.ganlin.com/logo.png");
+      background-image: url("../../../assets/logo.png");
     }
   }
 
@@ -142,6 +137,8 @@
 
   background-color: var(--background-color);
   visibility: hidden;
+
+  overflow: scroll;
 }
 
 .header__menu--visible {

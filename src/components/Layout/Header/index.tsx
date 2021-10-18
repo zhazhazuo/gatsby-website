@@ -3,7 +3,7 @@ import { map, compose } from "ramda"
 import TextLink, { Props as TextLinkProps } from "../../TextLink"
 import HeaderMenu from "./HeaderMenu"
 import HeaderDrawer from "./HeaderDrawer"
-import useHeader, { barList } from "./logic"
+import useHeader, { barList, childrenListMap } from "./logic"
 import "./index.scss"
 
 interface IProps {}
@@ -22,6 +22,7 @@ const Header: FC<Props> = (props) => {
     HamburgerClassName,
     drawerContent,
     setCurTabId,
+    setMenuShowStatus,
     onClickLogo,
     onMouseEnterHandle,
     onMouseLeaveHandle,
@@ -72,7 +73,13 @@ const Header: FC<Props> = (props) => {
           height: `calc(100vh - 70px)`,
         }}
       >
-        <HeaderMenu />
+        <HeaderMenu
+          menuList={barList.map((item) => ({
+            textInfo: item,
+            childrenList: childrenListMap[item.id],
+            onChangeMenuShow: setMenuShowStatus,
+          }))}
+        />
       </div>
       {isShowDrawer && (
         <HeaderDrawer onMouseEnter={() => onMouseEnterHandle()}>

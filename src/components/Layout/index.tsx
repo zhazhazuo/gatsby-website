@@ -9,14 +9,16 @@ import "./index.scss"
 
 interface IProps {}
 
-const defaultProps = {}
+const defaultProps = {
+  hiddenFooter: false,
+}
 
 type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
 
 const Layout: FC<Props> = (props) => {
-  const { children } = props
+  const { children, hiddenFooter } = props
 
   return (
     <Fragment>
@@ -54,9 +56,11 @@ const Layout: FC<Props> = (props) => {
           <Header />
         </div>
         <div className='layout__content'>{children}</div>
-        <div className='layout__footer'>
-          <Footer />
-        </div>
+        {!hiddenFooter && (
+          <div className='layout__footer'>
+            <Footer />
+          </div>
+        )}
       </div>
     </Fragment>
   )

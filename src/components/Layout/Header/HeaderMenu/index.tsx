@@ -1,9 +1,11 @@
-import CustomButton from "@/components/CustomButton"
-import TextLink from "@/components/TextLink"
 import React, { FC } from "react"
+import MenuItem, { Props as MenuItemProps } from "../MenuItem"
+import CustomButton from "@/components/CustomButton"
 import "./index.scss"
 
-interface IProps {}
+interface IProps {
+  menuList: MenuItemProps[]
+}
 
 const defaultProps = {}
 
@@ -12,24 +14,13 @@ type DefaultProps = Readonly<typeof defaultProps>
 type Props = IProps & Partial<DefaultProps>
 
 const HeaderMenu: FC<Props> = (props) => {
+  const { menuList } = props
   return (
     <div className='header-menu'>
       <div className='header-menu__content'>
-        <div className='header-menu__item'>
-          <TextLink id='123' content='产品方案' isMobile />
-        </div>
-        <div className='header-menu__item'>
-          <TextLink id='12' content='解决方案' isMobile />
-        </div>
-        <div className='header-menu__item'>
-          <TextLink id='12' content='服务支持' isMobile />
-        </div>
-        <div className='header-menu__item'>
-          <TextLink id='13' content='客户案例' isMobile isDrawer={false} />
-        </div>
-        <div className='header-menu__item'>
-          <TextLink id='23' content='关于甘邻' isMobile />
-        </div>
+        {menuList.map((menuItem) => (
+          <MenuItem {...menuItem} key={menuItem.textInfo.id} />
+        ))}
       </div>
       <div className='header-menu__bottom'>
         {/* <CustomButton size='large' type='secondary'>

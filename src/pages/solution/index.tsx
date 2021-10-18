@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from "react"
 import cls from "classnames"
 import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore from "swiper"
+import SwiperCore, { Mousewheel } from "swiper"
 import "swiper/css"
 import { createPropsGetter } from "@/common/utils"
 import { useGetWindowHeight } from "@/common/hooks"
@@ -9,7 +9,7 @@ import SolutionItem from "@/sections/Solution/SolutionItem"
 import { solutionList } from "../../sections/Solution/config"
 import "./index.scss"
 
-SwiperCore.use([])
+SwiperCore.use([Mousewheel])
 
 interface IProps {}
 
@@ -70,6 +70,10 @@ const Solution: FC<Props> = (props) => {
     swiperRef.current.swiper.slideTo(index)
   }
 
+  const swiperSlideChangeHandle = (event: SwiperCore) => {
+    setCurCatalogueIndex(event.activeIndex)
+  }
+
   useEffect(() => {
     if (state === null) return
     swiperRef.current.swiper.slideTo(state.index)
@@ -83,7 +87,13 @@ const Solution: FC<Props> = (props) => {
         height,
       }}
     >
-      <Swiper ref={swiperRef} className='solution__swiper' direction='vertical'>
+      <Swiper
+        ref={swiperRef}
+        className='solution__swiper'
+        direction='vertical'
+        mousewheel={true}
+        onSlideChange={swiperSlideChangeHandle}
+      >
         {solutionList.map((item, index) => (
           <SwiperSlide key={index}>
             <SolutionItem {...item} />

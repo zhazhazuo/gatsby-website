@@ -36,95 +36,102 @@ export const barList: TextLinkProps[] = [
   },
   {
     id: BarIdEnum.aboutUs,
-    isDrawer: false,
     content: "关于甘邻",
+    isDrawer: false,
+    onClick: () => {
+      navigate("/case/hai-ke")
+    },
   },
 ]
 
-const planList: InfoItemProps[] = [
-  {
-    icon: "ri-home-heart-fill",
-    title: "小区出行",
-    description: "小区智慧通行方案",
-    onClick: () => {
-      navigate("/solution", {
-        state: {
-          index: 0,
-        },
-      })
+export const childrenListMap: {
+  [key: string]: InfoItemProps[]
+} = {
+  [BarIdEnum.production]: [
+    {
+      icon: "ri-home-heart-fill",
+      title: "甘邻APP",
+      description: "社区居民线上生活服务APP",
+      onClick: () => {
+        navigate("/production#app")
+      },
     },
-  },
-  {
-    icon: "ri-pie-chart-2-fill",
-    title: "智能缴费",
-    description: "智能、便捷物业缴费方案",
-    onClick: () => {
-      navigate("/solution", {
-        state: {
-          index: 1,
-        },
-      })
+    {
+      icon: "ri-pie-chart-2-fill",
+      title: "数字物业平台",
+      description: "终身免费的现代物业数字化解决方案",
+      onClick: () => {
+        navigate("/production#management-system")
+      },
     },
-  },
-  {
-    icon: "ri-store-2-fill",
-    title: "报事报修",
-    description: "在线报事报修方案",
-    onClick: () => {
-      navigate("/solution", {
-        state: {
-          index: 2,
-        },
-      })
+    {
+      icon: "ri-store-2-fill",
+      title: "甘邻商家中心",
+      description: "轻松开店，招财进宝",
+      onClick: () => {
+        navigate("/production#shopping-system")
+      },
     },
-  },
-  {
-    icon: "ri-device-fill",
-    title: "社区电商",
-    description: "社区定制电商增值方案",
-    onClick: () => {
-      navigate("/solution", {
-        state: {
-          index: 3,
-        },
-      })
+    {
+      icon: "ri-device-fill",
+      title: "AIOT硬件",
+      description: "智能门禁等产品",
+      onClick: () => {
+        navigate("/production#hardware")
+      },
     },
-  },
-]
-const productionList: InfoItemProps[] = [
-  {
-    icon: "ri-home-heart-fill",
-    title: "甘邻APP",
-    description: "社区居民线上生活服务APP",
-    onClick: () => {
-      navigate("/production#app")
+  ],
+  [BarIdEnum.plan]: [
+    {
+      icon: "ri-home-heart-fill",
+      title: "小区出行",
+      description: "小区智慧通行方案",
+      onClick: () => {
+        navigate("/solution", {
+          state: {
+            index: 0,
+          },
+        })
+      },
     },
-  },
-  {
-    icon: "ri-pie-chart-2-fill",
-    title: "数字物业平台",
-    description: "终身免费的现代物业数字化解决方案",
-    onClick: () => {
-      navigate("/production#management-system")
+    {
+      icon: "ri-pie-chart-2-fill",
+      title: "智能缴费",
+      description: "智能、便捷物业缴费方案",
+      onClick: () => {
+        navigate("/solution", {
+          state: {
+            index: 1,
+          },
+        })
+      },
     },
-  },
-  {
-    icon: "ri-store-2-fill",
-    title: "甘邻商家中心",
-    description: "轻松开店，招财进宝",
-    onClick: () => {
-      navigate("/production#shopping-system")
+    {
+      icon: "ri-store-2-fill",
+      title: "报事报修",
+      description: "在线报事报修方案",
+      onClick: () => {
+        navigate("/solution", {
+          state: {
+            index: 2,
+          },
+        })
+      },
     },
-  },
-  {
-    icon: "ri-device-fill",
-    title: "AIOT硬件",
-    description: "智能门禁等产品",
-    onClick: () => {
-      navigate("/production#hardware")
+    {
+      icon: "ri-device-fill",
+      title: "社区电商",
+      description: "社区定制电商增值方案",
+      onClick: () => {
+        navigate("/solution", {
+          state: {
+            index: 3,
+          },
+        })
+      },
     },
-  },
-]
+  ],
+}
 
 enum MenuShowStatusEnum {
   normal = "normal",
@@ -134,7 +141,7 @@ enum MenuShowStatusEnum {
 
 const useHeader = () => {
   const [menuShowStatus, setMenuShowStatus] = useState(
-    MenuShowStatusEnum.normal
+    MenuShowStatusEnum.normal as "normal" | "visible" | "hidden"
   )
   const [isShowElevation, setIsShowElevation] = useState(false)
   const [isShowDrawer, setIsShowDrawer] = useState(false)
@@ -147,11 +154,13 @@ const useHeader = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: `repeat(${productionList.length}, 1fr)`,
+          gridTemplateColumns: `repeat(${
+            childrenListMap[BarIdEnum.production].length
+          }, 1fr)`,
           gridColumnGap: "2%",
         }}
       >
-        {productionList.map((productionItem) => (
+        {childrenListMap[BarIdEnum.production].map((productionItem) => (
           <InfoItem
             key={productionItem.title}
             {...productionItem}
@@ -167,11 +176,13 @@ const useHeader = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: `repeat(${productionList.length}, 1fr)`,
+          gridTemplateColumns: `repeat(${
+            childrenListMap[BarIdEnum.plan].length
+          }, 1fr)`,
           gridColumnGap: "2%",
         }}
       >
-        {planList.map((productionItem) => (
+        {childrenListMap[BarIdEnum.plan].map((productionItem) => (
           <InfoItem
             key={productionItem.title}
             {...productionItem}
@@ -217,7 +228,7 @@ const useHeader = () => {
   }
 
   const onMouseEnterHandle = (tabId?: string) => {
-    if (tabId === BarIdEnum.example) {
+    if ([BarIdEnum.example, BarIdEnum.aboutUs].includes(tabId as BarIdEnum)) {
       setIsShowDrawer(false)
       return
     }
@@ -240,6 +251,7 @@ const useHeader = () => {
     HamburgerClassName,
     drawerContent: drawerContentMap[curTabId],
     setCurTabId,
+    setMenuShowStatus,
     onClickLogo,
     onMouseEnterHandle,
     onMouseLeaveHandle,

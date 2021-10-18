@@ -47,4 +47,51 @@
 .text-link--mobile {
   @include H5;
   justify-content: space-between;
+
+  &:hover {
+    .ri-arrow-right-up-line {
+      transform: none;
+    }
+
+    .ri-arrow-right-line {
+      transform: none;
+    }
+
+    .ri-arrow-down-s-line {
+      transform: none;
+    }
+
+    .text-link__text {
+      color: var(--text-color);
+      transform: none;
+    }
+
+    .text-link__icon {
+      color: var(--text-color);
+      transform: none;
+    }
+  }
+}
+
+.text-link--active {
+  .ri-arrow-right-up-line {
+    transform: translateY(-3px) translateX(3px) !important;
+  }
+
+  .ri-arrow-right-line {
+    transform: translateY(0px) translateX(3px) !important;
+  }
+
+  .ri-arrow-down-s-line {
+    transform: rotate(180deg) !important;
+  }
+
+  .text-link__text {
+    color: var(--gray-text-color) !important;
+    transition: transitionFunc(color) !important;
+  }
+
+  .text-link__icon {
+    color: var(--gray-text-color) !important;
+  }
 }

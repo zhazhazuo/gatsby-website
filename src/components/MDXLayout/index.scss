@@ -34,3 +34,12 @@
     margin-top: var(--space-lg);
   }
 }
+
+@include breakpoint(0, sm) {
+  .MDX-layout {
+    padding: calc(70px + 40px) var(--space-md) 40px;
+    &__side {
+      display: none;
+    }
+  }
+}

@@ -12,6 +12,7 @@ const defaultProps = {
   isMobile: false,
   isDrawer: true,
   isOpenBlank: false,
+  isActive: false,
   onMouseEnter: () => {},
   onMouseLeave: () => {},
   onClick: () => {},
@@ -29,6 +30,7 @@ const TextLink: FC<Props> = (props) => {
     isOpenBlank,
     isDrawer,
     isMobile,
+    isActive,
     onMouseEnter,
     onMouseLeave,
     onClick,
@@ -36,6 +38,7 @@ const TextLink: FC<Props> = (props) => {
 
   const ClassName = cls("text-link", {
     "text-link--mobile": isMobile,
+    "text-link--active": isActive,
   })
 
   const IconClassName = cls("text-link__icon", {
