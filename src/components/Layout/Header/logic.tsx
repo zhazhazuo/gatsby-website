@@ -242,6 +242,7 @@ const useHeader = () => {
   const onClickLogo = () => {
     navigate("/")
     setIsShowDrawer(false)
+    setMenuShowStatus("hidden")
   }
 
   return {
