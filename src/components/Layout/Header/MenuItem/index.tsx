@@ -28,7 +28,7 @@ const MenuItem: FC<Props> = (props) => {
   })
 
   const menuItemClickHandle = () => {
-    if (!textInfo.isDrawer) {
+    if (!textInfo.isDrawer && !childrenList.length) {
       onChangeMenuShow("hidden")
       return
     }
