@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect } from "react"
+import React, { FC, Fragment } from "react"
 import { Helmet } from "react-helmet"
 import LogoIcon from "@/assets/logo.png"
 import "animate.css"
@@ -29,6 +29,16 @@ const Layout: FC<Props> = (props) => {
           @import
           url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
         </style>
+        {/* 百度统计 */}
+        <script>
+          {`var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a16f46edcc72c40a509f76f55f836225";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();`}
+        </script>
         {/* 强制禁止系统字体影响 */}
         <script>{`(function() {
 

@@ -46,3 +46,18 @@ exports.onCreateNode = ({ node, actions }) => {
     })
   }
 }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-modal-video/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

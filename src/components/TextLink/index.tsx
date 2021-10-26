@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import cls from "classnames"
-import { createPropsGetter } from "@/common/utils"
+import { createPropsGetter } from "@golink/link-ui"
 import "./index.scss"
 
 interface IProps {
@@ -42,10 +42,14 @@ const TextLink: FC<Props> = (props) => {
   })
 
   const IconClassName = cls("text-link__icon", {
-    "ri-arrow-right-line": !isDrawer && !isOpenBlank,
+    "ri-arrow-right-s-line": !isDrawer && !isOpenBlank,
     "ri-arrow-right-up-line": isDrawer && isOpenBlank,
     "ri-arrow-down-s-line": isDrawer,
   })
+
+  const clickHandle = () => {
+    onClick()
+  }
 
   const onMouseEnterHandle = () => {
     if (isMobile) return
@@ -60,7 +64,7 @@ const TextLink: FC<Props> = (props) => {
   return (
     <div
       className={ClassName}
-      onClick={onClick}
+      onClick={clickHandle}
       onMouseEnter={onMouseEnterHandle}
       onMouseLeave={onMouseLeaveHandle}
     >

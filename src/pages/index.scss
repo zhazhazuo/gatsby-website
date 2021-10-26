@@ -1,2 +1,9 @@
 .home-page {
+  min-width: 1280px;
+}
+
+@include breakpoint(0, sm) {
+  .home-page {
+    min-width: auto;
+  }
 }

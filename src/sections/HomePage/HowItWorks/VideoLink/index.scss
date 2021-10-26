@@ -1,7 +1,6 @@
 .video-link {
   @include Body1;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: var(--space-lg) 0;
 
@@ -20,5 +19,17 @@
     &:hover {
       color: var(--secondary-color);
     }
+  }
+
+  &__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@include breakpoint(0, sm) {
+  .video-link {
+    justify-content: center;
   }
 }

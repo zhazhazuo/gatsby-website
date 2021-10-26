@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from "react"
+import { navigate } from "gatsby-link"
 import { useGetWindowHeight } from "@/common/hooks"
 import CustomButton from "@/components/CustomButton"
 import TabBlock from "@/components/TabBlock"
@@ -45,16 +46,26 @@ const App: FC<Props> = (props) => {
             data-aos='fade-left'
             data-aos-duration='700'
           >
-            <div className='app__text__title'>甘邻App</div>
+            <div className='app__text__title'>甘邻 App</div>
             <div className='app__text__description'>
-              以用户为中心，为社区居民提供物业基础服务和本地生活服务.
+              以用户为中心，为社区居民提供物业基础服务和本地生活服务
             </div>
             <div
               className='app__text__controller'
               data-aos='fade-left'
               data-aos-delay='300'
             >
-              <CustomButton type='secondary' size='large'>
+              <CustomButton
+                type='secondary'
+                size='large'
+                onClick={() => {
+                  navigate("/support", {
+                    state: {
+                      type: "download",
+                    },
+                  })
+                }}
+              >
                 立刻下载
               </CustomButton>
             </div>

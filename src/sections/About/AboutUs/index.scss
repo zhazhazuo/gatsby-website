@@ -1,0 +1,116 @@
+.about-us {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 70px;
+
+  &__banner {
+    width: 100%;
+    height: 0;
+    padding-bottom: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../../assets/section/About/about-banner.png");
+  }
+
+  &__content {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: var(--space-xxl);
+  }
+
+  &__description {
+    @include Body1;
+    color: var(--light-text-color);
+  }
+
+  &__info {
+    margin-bottom: var(--space-xl);
+
+    &-logo {
+      width: 120px;
+      height: 120px;
+      margin: var(--space-xl) 0;
+
+      background-size: cover;
+      background-image: url("../../../assets/logo.png");
+    }
+
+    &-title {
+      @include H2;
+      margin-bottom: var(--space-md);
+    }
+  }
+
+  &__join-us {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-bottom: var(--space-xxl);
+    padding-bottom: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../../assets/section/About/join-us.png");
+
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__title {
+      @include H3;
+      margin-bottom: var(--space-xxs);
+      cursor: pointer;
+    }
+
+    &__text {
+      @include Subtitle1;
+      color: var(--text-color);
+      cursor: pointer;
+    }
+  }
+
+  &__connect-us {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    &__title {
+      @include H2;
+      margin-bottom: var(--space-xl);
+    }
+  }
+}
+
+@include breakpoint(0, sm) {
+  .about-us {
+    &__banner {
+      padding-bottom: 40%;
+    }
+
+    &__content {
+      margin: 0 16px;
+    }
+
+    &__info-logo {
+      width: 80px;
+      height: 80px;
+    }
+
+    &__join-us {
+      padding-bottom: 40%;
+
+      &__content {
+        width: calc(100% - 32px);
+        margin: 0 16px;
+      }
+    }
+
+    &__connect-us {
+      margin: 0 16px;
+    }
+  }
+}

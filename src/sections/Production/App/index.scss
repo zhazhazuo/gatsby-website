@@ -92,3 +92,38 @@
     }
   }
 }
+
+@include breakpoint(sm, md) {
+  .app {
+    &__text {
+      grid-column: 1 / 13;
+      grid-row: 3 / 5;
+
+      &__title {
+        text-align: center;
+      }
+
+      &__description {
+        text-align: center;
+      }
+
+      &__controller {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__show-img {
+      grid-column: 1 / 13;
+      grid-row: 7 / 12;
+
+      display: flex;
+      justify-content: center;
+
+      &__background {
+        padding-bottom: 50%;
+        left: 20%;
+      }
+    }
+  }
+}

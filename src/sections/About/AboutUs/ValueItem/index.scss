@@ -1,0 +1,13 @@
+.value-item {
+  margin-bottom: var(--space-sm);
+
+  &-title {
+    @include H3;
+    margin-bottom: var(--space-sm);
+  }
+
+  &__description {
+    @include Body1;
+    color: var(--light-text-color);
+  }
+}

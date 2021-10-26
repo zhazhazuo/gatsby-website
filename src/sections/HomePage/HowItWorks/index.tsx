@@ -1,9 +1,14 @@
 import React, { FC } from "react"
-import { map } from "ramda"
 import { useGetWindowHeight } from "@/common/hooks"
+import FeatureItem, {
+  Props as IFeatureItemProps,
+} from "@/components/FeatureItem"
 import "./index.scss"
+import VideoLink from "./VideoLink"
 
-interface IProps {}
+interface IProps {
+  onShowChange: (value: boolean) => void
+}
 
 const defaultProps = {}
 
@@ -11,75 +16,53 @@ type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
 
-const planList = [
-  "0成本 搭建社区智能基建",
-  "0成本 接入智能物业管理平台",
-  "0成本 住户使用甘邻App ",
+const featureList: IFeatureItemProps[] = [
+  {
+    icon: "ri-macbook-line",
+    title: "数字物业平台",
+    text: "终身免费的现代物业数字化解决方案",
+  },
+  {
+    icon: "ri-smartphone-line",
+    title: "甘邻 APP",
+    text: "社区居民线上服务平台",
+  },
+  {
+    icon: "ri-camera-2-line",
+    title: "AIOT 智能硬件",
+    text: "包含极具性价比的智能门禁等产品",
+  },
 ]
 
 const HowItWorks: FC<Props> = (props) => {
+  const { onShowChange } = props
   const { height } = useGetWindowHeight()
 
   return (
-    <section
-      className='how-it-works'
-      style={{
-        height: height * 0.4,
-      }}
-    >
-      <div className='how-it-works__description' data-aos='fade-right'>
-        <div className='how-it-works__title'>甘邻智慧社区</div>
-        <ul className='how-it-works__points'>
-          {map(
-            (item) => (
-              <li className='how-it-works__point' key={item}>
-                <i className='ri-checkbox-line' />
-                <span>{item}</span>
-              </li>
-            ),
-            planList
-          )}
-        </ul>
-      </div>
-      <div className='how-it-works__road-map'>
-        <div className='how-it-works__item' data-aos='fade-up'>
-          <div className='how-it-works__saas how-it-works__img'></div>
-          <p className='how-it-works__text'>甘邻物业管理平台(网页+小程序)</p>
+    <section className='how-it-works__wrapper'>
+      <div
+        className='how-it-works grid'
+        style={{
+          height: height * 0.9,
+        }}
+      >
+        <div className='how-it-works__description' data-aos='fade-right'>
+          <div className='how-it-works__description__title'>
+            <p>接近零成本</p>
+            <p>搭建智慧社区</p>
+          </div>
+          <div className='how-it-works__description__feature-list'>
+            {featureList.map((item, index) => (
+              <FeatureItem {...item} key={index} />
+            ))}
+            <VideoLink onShowChange={onShowChange} />
+          </div>
         </div>
-        <div
-          className='how-it-works__icon'
-          data-aos='fade-up'
-          data-aos-delay='400'
-        >
-          <i className='ri-add-line'></i>
-        </div>
-        <div
-          className='how-it-works__item'
-          data-aos='fade-up'
-          data-aos-delay='600'
-        >
-          <div className='how-it-works__app how-it-works__img'></div>
-          <p className='how-it-works__text'>甘邻住户APP</p>
-        </div>
-        <div
-          className='how-it-works__icon'
-          data-aos='fade-up'
-          data-aos-delay='800'
-        >
-          <i
-            className='ri-pause-line'
-            style={{
-              transform: "rotate(90deg)",
-            }}
-          ></i>
-        </div>
-        <div
-          className='how-it-works__item'
-          data-aos='fade-up'
-          data-aos-delay='800'
-        >
-          <div className='how-it-works__beautiful how-it-works__img'></div>
-          <p className='how-it-works__text'>甘邻智慧社区</p>
+        <div className='how-it-works__show' data-aos='fade-left'>
+          <div className='how-it-works__show__img'>
+            <div className='how-it-works__show__background-left how-it-works__show__background'></div>
+            <div className='how-it-works__show__background-right how-it-works__show__background'></div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import cls from "classnames"
-import { createPropsGetter } from "@/common/utils"
+import { createPropsGetter } from "@golink/link-ui"
 import "./index.scss"
 
 enum ShapeEnum {
@@ -38,6 +38,7 @@ const defaultProps = {
   size: SizeEnum.default as SizeType,
   shape: ShapeEnum.default as ShapeType,
   elevationLevel: 0 as ElevationLevelType,
+  onClick: () => {},
 }
 
 type DefaultProps = Readonly<typeof defaultProps>
@@ -47,7 +48,8 @@ type Props = IProps & Partial<DefaultProps>
 const getProps = createPropsGetter<DefaultProps>()
 
 const CustomButton: FC<Props> = (props) => {
-  const { children, type, size, full, ghost, elevationLevel } = getProps(props)
+  const { children, type, size, full, ghost, elevationLevel, onClick } =
+    getProps(props)
   const ClassName = cls(
     `custom-button custom-button--${type} custom-button--${size}`,
     {
@@ -60,7 +62,11 @@ const CustomButton: FC<Props> = (props) => {
     }
   )
 
-  return <button className={ClassName}>{children}</button>
+  return (
+    <button className={ClassName} onClick={onClick}>
+      {children}
+    </button>
+  )
 }
 
 CustomButton.defaultProps = defaultProps

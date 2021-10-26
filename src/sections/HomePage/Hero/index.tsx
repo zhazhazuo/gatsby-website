@@ -15,47 +15,51 @@ const Hero: FC<Props> = (props) => {
   const { height } = useGetWindowHeight()
 
   return (
-    <section
-      className='hero'
-      style={{
-        height: height,
-      }}
-    >
+    <div className='hero__wrapper'>
       <div
-        className='hero__background__pop-left'
-        data-aos='fade-up'
-        data-aos-duration='5000'
-      ></div>
-      <div
-        className='hero__background__pop-right'
-        data-aos='fade-up'
-        data-aos-duration='2000'
-      ></div>
-      <div className='hero__background' />
-      <div className='hero__content grid'>
-        <div
-          className='hero__description'
-          data-aos='fade-right'
-          data-aos-delay='500'
-        >
-          <div className='hero__description__tag'>
-            生活APP · 物业数字化 · AIOT
-          </div>
-          <div className='hero__description__slogan'>
-            <span>让社区生活更美好</span>
-          </div>
-          <div className='hero__description__label'>
+        className='hero grid'
+        style={{
+          height,
+        }}
+      >
+        <div className='hero__text' data-aos='zoom-in' data-aos-duration='600'>
+          <div className='hero__title'>让社区生活更美好</div>
+          <div className='hero__description'>
             为中小型物业企业和社区居民，提供极致的产品和服务
           </div>
-          <CustomButton size='large' type='primary' elevationLevel={4}>
-            立即尝试
-          </CustomButton>
+          <div className='hero__button'>
+            <CustomButton size='large' type='primary' elevationLevel={4}>
+              开始体验
+            </CustomButton>
+          </div>
         </div>
-        <div className='hero__img' data-aos='fade-left' data-aos-delay='800'>
-          <div className='hero__img__content' />
+
+        <div className='hero__show'>
+          <div className='hero__show__content'>
+            <div
+              className='hero__show__production'
+              data-aos='fade-up'
+              data-aos-duration='800'
+              data-aos-delay='600'
+            >
+              <div className='hero__show__website' />
+            </div>
+            <div
+              className='hero__show__background-left'
+              data-aos='fade-right'
+              data-aos-duration='600'
+              data-aos-delay='600'
+            />
+            <div
+              className='hero__show__background-right'
+              data-aos='fade-left'
+              data-aos-duration='600'
+              data-aos-delay='600'
+            />
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -6,6 +6,7 @@ import { setGlobalData } from "./global"
 const isBrowser = typeof window !== "undefined"
 
 interface ITarget {
+  innerWidth: number
   innerHeight: number
 }
 
@@ -46,4 +47,31 @@ export const useGetWindowHeight = () => {
   return {
     height: height <= 789 ? 789 : height,
   }
+}
+
+/**
+ * 判断当前是否是移动设备
+ * @returns
+ */
+export const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const onResize = (event: UIEvent) => {
+      const { target } = event
+      const { innerHeight, innerWidth } = target as unknown as ITarget
+      setIsMobile(innerHeight / innerWidth > 1.3)
+    }
+
+    if (isBrowser) {
+      const { innerWidth, innerHeight } = window
+
+      setIsMobile(innerHeight / innerWidth > 1.3)
+      window.addEventListener("resize", onResize)
+    }
+
+    return () => window.removeEventListener("resize", onResize)
+  }, [isBrowser])
+
+  return isMobile
 }

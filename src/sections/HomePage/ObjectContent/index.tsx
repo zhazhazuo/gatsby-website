@@ -34,7 +34,7 @@ const ObjectContent: FC<Props> = (props) => {
           <ObjectItem
             isReverse
             title='社区居民'
-            description='我们为社区居民提供体验更好的APP和硬件，在线就可以获取物业基础服务，和更多的周边生活服务。'
+            description='我们为社区居民提供体验更好的 APP 和硬件，在线就可以获取物业基础服务，和更多的周边生活服务。'
             img={CustomerImg}
           />
         </div>

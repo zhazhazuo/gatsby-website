@@ -1,15 +1,21 @@
-/**
- * React组件defaultProps辅助函数
- * @returns
- */
-export const createPropsGetter = <DP extends object>() => {
-  // 通过闭包的方式记住了defaultProps的类型DP
-  return <P extends Partial<DP>>(props: P) => {
-    // 实际就是取出P类型中必填的部分 - 必填属性类型
-    type PropsExcludeDefaultProps = Pick<P, Exclude<keyof P, keyof DP>>
-    // 将默认属性的类型（非可选）重组
-    type RecomposedProps = DP & PropsExcludeDefaultProps
+import { navigate } from "gatsby-link"
 
-    return props as any as RecomposedProps
+export const downloadHandle = () => {
+  const linkAndroid = "http://cdn.img.ganlin.fun/store/ganlin.apk"
+
+  const u = navigator.userAgent
+  // 判断是否是 Android 终端
+  const isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1
+
+  const isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+  const isWeiXin =
+    navigator.userAgent.toLowerCase().indexOf("micromessenger") > -1
+
+  if (!isAndroid && !isIos && !isWeiXin) return
+
+  if (isAndroid) {
+    navigate(linkAndroid)
+  } else {
+    navigate(`https://apps.apple.com/cn/app/%E7%94%98%E9%82%BB/id1544613611`)
   }
 }

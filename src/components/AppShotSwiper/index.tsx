@@ -4,7 +4,7 @@ import SwiperCore, { Autoplay } from "swiper"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import { createPropsGetter } from "@/common/utils"
+import { createPropsGetter } from "@golink/link-ui"
 import "./index.scss"
 
 SwiperCore.use([Autoplay])
@@ -42,17 +42,30 @@ const AppShotSwiper: FC<Props> = (props) => {
   }
 
   const onSwiperClick = (e: SwiperCore) => {
-    const base = e.clickedIndex - slidesPerView
-    const value = base < shotList.length ? base : base - shotList.length
-    setCurIndex(value < 0 ? value + shotList.length : value)
-    if (e.clickedIndex === 16) {
-      swiperRef.current.swiper.slideTo(5, 0)
+    const clickIndex = Number(e.clickedSlide.dataset.swiperSlideIndex)
+    const isPrePoint1 = clickIndex === 7 && [0, 1].includes(curIndex)
+    const isPrePoint2 = clickIndex === 6 && curIndex === 0
+
+    if (clickIndex === 1 && curIndex === 3) {
+      swiperRef.current.swiper.slidePrev()
       return
-    } else if (e.clickedIndex === 2) {
-      swiperRef.current.swiper.slideTo(9, 0)
+    } else if (clickIndex === 0 && curIndex === 2) {
+      swiperRef.current.swiper.slideTo(5)
       return
     }
-    swiperRef.current.swiper.slideTo(e.clickedIndex - 3)
+
+    if (clickIndex === 1 && ![0, 7].includes(curIndex)) {
+      swiperRef.current.swiper.slideTo(5)
+    } else if (
+      (clickIndex > curIndex && !isPrePoint1 && !isPrePoint2) ||
+      (clickIndex === 0 && curIndex === 7) ||
+      (clickIndex === 0 && curIndex === 6) ||
+      (clickIndex === 1 && curIndex === 7)
+    ) {
+      swiperRef.current.swiper.slideNext()
+    } else if (clickIndex < curIndex || isPrePoint1 || isPrePoint2) {
+      swiperRef.current.swiper.slidePrev()
+    }
   }
 
   return (
@@ -68,6 +81,7 @@ const AppShotSwiper: FC<Props> = (props) => {
       ></div>
       <Swiper
         ref={swiperRef}
+        className='app-shot-swiper__content'
         slidesPerView={slidesPerView}
         spaceBetween={0}
         slidesPerGroup={1}
@@ -77,9 +91,8 @@ const AppShotSwiper: FC<Props> = (props) => {
           delay: 1700,
           disableOnInteraction: false,
         }}
-        className='app-shot-swiper__content'
-        onAutoplay={onAutoplayHandle}
         onClick={onSwiperClick}
+        onSlideChange={onAutoplayHandle}
       >
         {shotList.map((item, index) => (
           <SwiperSlide key={index}>

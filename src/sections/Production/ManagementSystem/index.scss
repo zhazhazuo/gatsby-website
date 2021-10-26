@@ -100,5 +100,9 @@
       display: flex;
       justify-content: center;
     }
+
+    &__detail {
+      height: auto !important;
+    }
   }
 }

@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import AnchorPoint from "@/components/AnchorPoint"
 import { useGetWindowHeight } from "@/common/hooks"
+import HardwareImg from "@/assets/section/Hardware/device.png"
 import "./index.scss"
 
 interface IProps {}
@@ -11,18 +12,43 @@ type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
 
+const descriptionList = [
+  "99.9% 的设备稳定性",
+  "可存储 5 万白名单用户数据",
+  "ID / IC 双卡读取",
+  "动态二维码扫码开门",
+  "WiFi / 有线 双联网模式",
+  "手机远程开门",
+  "IP67 防水等级",
+  "2.2 英寸屏幕",
+  "铝合金、钢化玻璃外壳",
+]
+
 const Hardware: FC<Props> = (props) => {
   const { height } = useGetWindowHeight()
   return (
     <section
       className='hardware grid'
       style={{
-        height: height * 0.8,
+        height,
       }}
     >
       <AnchorPoint pointId='hardware' />
-      <p className='hardware__title'>二维码门禁机</p>
-      <div className='hardware__img' />
+      <div className='hardware__content'>
+        <img className='hardware__img' src={HardwareImg} alt='' />
+        <div className='hardware__slogan'>
+          <p className='hardware__slogan__title'>二维码门禁</p>
+          <p>为软件重新设计的硬件</p>
+          <p>无需学习，10秒配置上线</p>
+        </div>
+      </div>
+      <div className='hardware__description'>
+        {descriptionList.map((item, index) => (
+          <div className='hardware__description__item' key={index}>
+            {item}
+          </div>
+        ))}
+      </div>
     </section>
   )
 }

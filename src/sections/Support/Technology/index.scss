@@ -1,0 +1,58 @@
+.technology {
+  &__show {
+    grid-column: 1 / 13;
+    grid-row: 2 / 9;
+    background-image: url("../../../assets/section/Support/technology-background.jpeg");
+    background-size: cover;
+  }
+
+  &__content {
+    grid-column: 1 / 13;
+    grid-row: 9 / 12;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10%;
+  }
+
+  &__title {
+    @include H3;
+    margin-bottom: var(--space-sm);
+  }
+
+  &__description {
+    @include Body1;
+    color: var(--light-text-color);
+    margin-bottom: var(--space-lg);
+  }
+
+  &__contact-information {
+    @include H5;
+
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__icon {
+    margin-right: var(--space-xs);
+  }
+}
+
+@include breakpoint(0, sm) {
+  .technology {
+    &__show {
+      grid-row: 2 / 6;
+      background-repeat: no-repeat;
+    }
+
+    &__content {
+      grid-row: 6 / 13;
+      display: block;
+    }
+
+    &__info-item {
+      margin-bottom: var(--space-md);
+    }
+  }
+}

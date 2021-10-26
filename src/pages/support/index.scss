@@ -1,0 +1,9 @@
+.support {
+  min-width: 1280px;
+}
+
+@include breakpoint(0, sm) {
+  .support {
+    min-width: auto;
+  }
+}

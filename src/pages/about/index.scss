@@ -1,0 +1,9 @@
+.about {
+  min-width: 1280px;
+}
+
+@include breakpoint(0, sm) {
+  .about {
+    min-width: auto;
+  }
+}

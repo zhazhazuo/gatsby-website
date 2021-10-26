@@ -39,7 +39,7 @@ export const barList: TextLinkProps[] = [
     content: "关于甘邻",
     isDrawer: false,
     onClick: () => {
-      navigate("/case/hai-ke")
+      navigate("/about")
     },
   },
 ]
@@ -74,8 +74,8 @@ export const childrenListMap: {
     },
     {
       icon: "ri-device-fill",
-      title: "AIOT硬件",
-      description: "智能门禁等产品",
+      title: "二维码门禁",
+      description: "更多AIOT智能硬件即将到来",
       onClick: () => {
         navigate("/production#hardware")
       },
@@ -84,8 +84,8 @@ export const childrenListMap: {
   [BarIdEnum.plan]: [
     {
       icon: "ri-home-heart-fill",
-      title: "小区出行",
-      description: "小区智慧通行方案",
+      title: "小区通行",
+      description: "安全，便捷，软硬件结合",
       onClick: () => {
         navigate("/solution", {
           state: {
@@ -97,7 +97,7 @@ export const childrenListMap: {
     {
       icon: "ri-pie-chart-2-fill",
       title: "智能缴费",
-      description: "智能、便捷物业缴费方案",
+      description: "智能、方便的物业费缴费方案",
       onClick: () => {
         navigate("/solution", {
           state: {
@@ -109,7 +109,7 @@ export const childrenListMap: {
     {
       icon: "ri-store-2-fill",
       title: "报事报修",
-      description: "在线报事报修方案",
+      description: "手机报修，在线处理",
       onClick: () => {
         navigate("/solution", {
           state: {
@@ -121,11 +121,65 @@ export const childrenListMap: {
     {
       icon: "ri-device-fill",
       title: "社区电商",
-      description: "社区定制电商增值方案",
+      description: "一键开通社区电商服务",
       onClick: () => {
         navigate("/solution", {
           state: {
             index: 3,
+          },
+        })
+      },
+    },
+  ],
+  [BarIdEnum.support]: [
+    {
+      icon: "",
+      title: "下载",
+      description: "甘邻产品下载",
+      onClick: () => {
+        navigate("/support", {
+          state: {
+            type: "download",
+          },
+        })
+      },
+    },
+    {
+      icon: "",
+      title: "产品定价",
+      description: "接近免费的定价策略",
+      onClick: () => {
+        navigate("/support", {
+          state: {
+            type: "price",
+          },
+        })
+      },
+    },
+    {
+      icon: "",
+      title: "帮助手册",
+      description: "学习如何使用甘邻的产品和服务",
+      onClick: () => {
+        navigate("https://www.baidu.com")
+      },
+    },
+    {
+      icon: "",
+      title: "服务条款",
+      description: "了解甘邻具体服务条款",
+      onClick: () => {
+        navigate("https://www.baidu.com")
+      },
+    },
+    {
+      icon: "",
+      title: "技术与服务",
+      description: "了解更多支持无服务",
+      onClick: () => {
+        navigate("/support", {
+          state: {
+            type: "technology",
           },
         })
       },
@@ -194,8 +248,28 @@ const useHeader = () => {
         ))}
       </div>
     ),
-    [BarIdEnum.aboutUs]: <div></div>,
-    [BarIdEnum.support]: <div></div>,
+    [BarIdEnum.support]: (
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${
+            childrenListMap[BarIdEnum.support].length
+          }, 1fr)`,
+          gridColumnGap: "2%",
+        }}
+      >
+        {childrenListMap[BarIdEnum.support].map((productionItem) => (
+          <InfoItem
+            key={productionItem.title}
+            {...productionItem}
+            onClick={() => {
+              productionItem.onClick()
+              setIsShowDrawer(false)
+            }}
+          />
+        ))}
+      </div>
+    ),
   }
 
   useScrollPosition(({ prevPos, currPos }) => {

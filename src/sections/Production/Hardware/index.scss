@@ -1,18 +1,85 @@
 .hardware {
-  &__title {
-    @include H3;
+  padding: var(--space-xl) 0;
+  &__content {
     grid-column: 1 / 13;
-    grid-row: 2 /4;
+    grid-row: 1 / 7;
 
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   &__img {
-    grid-column: 1 / 13;
-    grid-row: 4 / 12;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../../assets/section/Hardware/device.png");
+    margin-right: var(--space-xxl);
+  }
+
+  &__slogan {
+    @include H3;
+    font-weight: 200;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 490px;
+
+    &__title {
+      @include H4;
+      font-weight: 400;
+      margin-bottom: var(--space-xl);
+    }
+  }
+
+  &__description {
+    @include Subtitle2;
+    grid-column: 3 / 11;
+    grid-row: 8 / 13;
+
+    font-weight: 200;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__description__item {
+    border-radius: 12px;
+    border: 1px solid var(--gray-border-color);
+    width: 220px;
+    height: 90px;
+    padding: 0 var(--space-md);
+    margin-bottom: var(--space-sm);
+    line-height: 90px;
+    text-align: center;
+  }
+}
+
+@include breakpoint(0, sm) {
+  .hardware {
+    height: auto !important;
+    &__content {
+      flex-direction: column;
+    }
+
+    &__img {
+      margin-right: 0;
+    }
+
+    &__slogan {
+      @include H4;
+
+      &__title {
+        margin-bottom: var(--space-sm);
+      }
+    }
+
+    &__description {
+      grid-column: 1 / 13;
+      grid-row: 7 / 13;
+
+      grid-template-columns: repeat(1, 1fr);
+
+      &__item {
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
   }
 }

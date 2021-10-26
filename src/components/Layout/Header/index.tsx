@@ -58,7 +58,7 @@ const Header: FC<Props> = (props) => {
         <div className='header__controller'>
           <button className='header__controller__try-button'>
             <span>开始体验</span>
-            <i className='ri-rocket-2-line header__controller__icon'></i>
+            <i className='ri-space-ship-line header__controller__icon'></i>
           </button>
         </div>
         <div className='header__hamburger'>

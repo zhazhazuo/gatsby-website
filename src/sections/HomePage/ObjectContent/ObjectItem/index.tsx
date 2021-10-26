@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import cls from "classnames"
-import { createPropsGetter } from "@/common/utils"
+import { createPropsGetter } from "@golink/link-ui"
 import "./index.scss"
 
 interface IProps {

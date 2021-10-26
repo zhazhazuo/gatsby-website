@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { createPropsGetter } from "@/common/utils"
+import { createPropsGetter } from "@golink/link-ui"
 import CustomButton from "../CustomButton"
 import "./index.scss"
 

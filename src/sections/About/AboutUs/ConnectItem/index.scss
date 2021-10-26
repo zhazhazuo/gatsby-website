@@ -1,0 +1,50 @@
+.connect-item {
+  display: flex;
+  margin-bottom: var(--space-lg);
+
+  &__show {
+    width: 180px;
+    height: 140px;
+    margin-right: var(--space-md);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__title {
+    @include H4;
+    margin-bottom: var(--space-xxs);
+  }
+
+  &__info {
+    @include Body2;
+    color: var(--light-text-color);
+    margin-bottom: var(--space-xxs);
+
+    display: flex;
+
+    &__label {
+      min-width: 80px;
+    }
+  }
+}
+
+@include breakpoint(0, sm) {
+  .connect-item {
+    &__title {
+      margin-bottom: var(--space-md);
+    }
+  }
+}
+
+@include breakpoint(0, xs) {
+  .connect-item {
+    flex-direction: column;
+
+    &__show {
+      width: 100%;
+      height: 0px;
+      padding-bottom: 70%;
+    }
+  }
+}

@@ -75,16 +75,13 @@
       border: 1px solid transparent;
       color: var(--text-color);
       cursor: pointer;
+      transition: transitionFunc(all, 400ms);
 
       &:hover {
         @include elevation--level4;
 
         color: var(--on-primary-color);
         background-color: var(--primary-color);
-        transition: transitionFunc(background-color, 1000ms);
-        transition: transitionFunc(border-color, 800ms);
-        transition: transitionFunc(color);
-        transition: transitionFunc(box-shadow);
 
         .header__controller__icon {
           @include flip-vertical-bottom;
@@ -131,7 +128,7 @@
 
 .header__menu {
   position: fixed;
-  top: 70px;
+  top: 69px;
 
   width: 100%;
 
@@ -155,7 +152,7 @@
 }
 
 // 响应式布局样式
-@include breakpoint(0, md) {
+@include breakpoint(0, sm) {
   .header__logo {
     grid-column: 1 / 7;
   }

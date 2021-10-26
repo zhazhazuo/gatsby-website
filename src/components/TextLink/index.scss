@@ -13,7 +13,7 @@
 
   .ri-arrow-down-s-line {
     transform: rotate(0deg);
-    transition: transitionFunc(all);
+    transition: transitionFunc(all, 300ms);
   }
 
   &:hover {
@@ -21,7 +21,7 @@
       transform: translateY(-3px) translateX(3px);
     }
 
-    .ri-arrow-right-line {
+    .ri-arrow-right-s-line {
       transform: translateY(0px) translateX(3px);
     }
 

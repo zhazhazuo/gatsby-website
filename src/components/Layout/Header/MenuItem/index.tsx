@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react"
 import cls from "classnames"
-import { createPropsGetter } from "@/common/utils"
+import { createPropsGetter } from "@golink/link-ui"
 import TextLink, { Props as TextLinkProps } from "@/components/TextLink"
 import { Props as InfoItemProps } from "../InfoItem"
 import "./index.scss"
