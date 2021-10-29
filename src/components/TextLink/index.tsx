@@ -42,8 +42,8 @@ const TextLink: FC<Props> = (props) => {
   })
 
   const IconClassName = cls("text-link__icon", {
-    "ri-arrow-right-s-line": !isDrawer && !isOpenBlank,
-    "ri-arrow-right-up-line": isDrawer && isOpenBlank,
+    // "ri-arrow-right-s-line": !isDrawer && !isOpenBlank,
+    // "ri-arrow-right-up-line": isDrawer && isOpenBlank,
     "ri-arrow-down-s-line": isDrawer,
   })
 

@@ -7,20 +7,25 @@
 
   overflow: hidden;
   min-width: 1280px;
+  height: 684px;
 
   color: var(--white-color);
 
   &__title {
-    @include H3;
+    @include H2;
     width: 50%;
   }
 
   &__description {
-    @include Subtitle2;
+    @include Body2;
 
     width: 50%;
-    margin-top: var(--space-md);
     margin-bottom: var(--space-lg);
+
+    &__p {
+      opacity: 0.8;
+      margin-top: var(--space-lg);
+    }
   }
 
   &__background {
@@ -30,6 +35,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../../../assets/promo-bg-img2.jpg");
+  }
+
+  &__button {
+    width: 50%;
   }
 }
 

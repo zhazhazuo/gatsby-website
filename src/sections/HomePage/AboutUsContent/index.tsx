@@ -26,12 +26,7 @@ const AboutUsContent: FC<Props> = (props) => {
   }
 
   return (
-    <div
-      className={ClassName}
-      style={{
-        height: height * 0.6,
-      }}
-    >
+    <div className={ClassName}>
       <div className='about-us-content__background' />
       <div
         className='about-us-content__title'
@@ -46,10 +41,10 @@ const AboutUsContent: FC<Props> = (props) => {
         data-aos='fade'
         data-aos-duration='600'
       >
-        <p>
+        <p className='about-us-content__description__p'>
           我们为中小型物业公司提供终身免费的数字物业平台、APP，和成本极低的智能硬件。通过软件、硬件、互联网的完美融合，为物业客户增加多种经营收入，提高经营水平，提升居民服务体验。
         </p>
-        <p>
+        <p className='about-us-content__description__p'>
           我们的成员主要来自于小米、金山、腾讯等科技公司，核心团队由前小米、金山高管组成。
           在企业软件、数字化转型
           、电商、供应链、智能硬件、协同办公等领域，有十年以上的经验。
@@ -57,12 +52,12 @@ const AboutUsContent: FC<Props> = (props) => {
       </div>
       <div
         className='about-us-content__button'
-        data-aos='zoom-in'
+        data-aos='fade'
         data-aos-duration='600'
       >
         <CustomButton
-          size='large'
-          type='primary'
+          size='default'
+          type='secondary'
           onClick={learnMoreClickHandle}
         >
           了解更多

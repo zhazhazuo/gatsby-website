@@ -22,10 +22,11 @@ const VideoLink: FC<Props> = (props) => {
         data-aos-delay='200'
         onClick={() => onShowChange(true)}
       >
-        <i className='ri-play-circle-fill video-link__icon' />
         <span className='video-link__text'>进一步了解方案</span>
+        <div className='video-link__icon'>
+          <i className='ri-play-fill'></i>
+        </div>
       </section>
-      <div className='video-link__modal'></div>
     </Fragment>
   )
 }

@@ -3,10 +3,10 @@
   margin-bottom: var(--space-md);
 
   &__img {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    border: 1px solid var(--gray-border-color);
+    width: 74px;
+    height: 74px;
+    border-radius: 32.8%;
+    border: 2px solid var(--border-color);
     margin-right: var(--space-md);
 
     display: flex;
@@ -19,16 +19,19 @@
 
   &__description {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__title {
-    @include Subtitle1;
+    @include H4;
     font-weight: 400;
     margin-bottom: var(--space-xs);
   }
 
   &__text {
-    @include Body1;
+    @include Body2;
     color: var(--gray-text-color);
   }
 }

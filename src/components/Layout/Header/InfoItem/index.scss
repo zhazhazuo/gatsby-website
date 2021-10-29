@@ -39,13 +39,14 @@
   }
 
   &__description {
-    @include Caption;
+    @include Body2;
+    color: var(--light-text-color);
 
     margin: 4px 0 var(--space-xs) 0;
   }
 
   &__learn-more {
-    @include Caption;
+    @include Body2;
 
     font-weight: 500;
     color: var(--primary-color);

@@ -7,41 +7,70 @@
   padding-top: var(--space-lg);
 
   display: grid;
-  grid-column-gap: 3.19%;
-  grid-row-gap: 6.19%;
+  grid-column-gap: var(--space-md);
+  grid-row-gap: var(--space-md);
 }
 
 .grid-item {
-  @include elevation--level8;
+  @include elevation-card;
+
+  position: relative;
   box-sizing: border-box;
-  padding: var(--space-sm);
-  border-radius: 8px;
+  padding: var(--space-lg);
+  border-radius: 12px;
+
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
-  &__icon {
-    flex: 1;
-    display: flex;
-    max-width: 80px;
+  cursor: pointer;
 
-    font-size: 40px;
-    color: var(--primary-color);
+  &:hover {
+    .grid-item__icon {
+      background-color: var(--primary-color);
+      border: 1px solid transparent;
+    }
+
+    .grid-item__bottom-line {
+      background-color: var(--primary-color);
+    }
   }
 
-  &__description {
-    flex: 3;
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--light-border-color);
+    border-radius: 12px;
+    margin-bottom: var(--space-md);
+
+    transition: transitionFunc(all, 400ms);
   }
 
   &__title {
-    @include Subtitle1;
+    @include H4;
     font-weight: 400;
   }
 
   &__text {
     @include Body2;
 
-    margin-top: var(--text-xxs);
+    margin-top: var(--text-xs);
     color: var(--light-text-color);
+  }
+
+  &__bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 0 0 12px 12px;
+    background-color: transparent;
+
+    transition: transitionFunc(all, 400ms);
   }
 }
 

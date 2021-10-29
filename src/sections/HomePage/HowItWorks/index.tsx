@@ -43,13 +43,18 @@ const HowItWorks: FC<Props> = (props) => {
       <div
         className='how-it-works grid'
         style={{
-          height: height * 0.9,
+          height,
         }}
       >
         <div className='how-it-works__description' data-aos='fade-right'>
           <div className='how-it-works__description__title'>
             <p>接近零成本</p>
-            <p>搭建智慧社区</p>
+            <p>
+              搭建
+              <span className='how-it-works__description__title--active'>
+                智慧社区
+              </span>
+            </p>
           </div>
           <div className='how-it-works__description__feature-list'>
             {featureList.map((item, index) => (
@@ -59,10 +64,7 @@ const HowItWorks: FC<Props> = (props) => {
           </div>
         </div>
         <div className='how-it-works__show' data-aos='fade-left'>
-          <div className='how-it-works__show__img'>
-            <div className='how-it-works__show__background-left how-it-works__show__background'></div>
-            <div className='how-it-works__show__background-right how-it-works__show__background'></div>
-          </div>
+          <div className='how-it-works__show__img'></div>
         </div>
       </div>
     </section>

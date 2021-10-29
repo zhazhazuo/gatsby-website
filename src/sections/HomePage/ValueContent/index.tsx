@@ -70,19 +70,16 @@ const ValueContent: FC<Props> = (props) => {
     <section
       className='value-content__wrapper'
       style={{
-        height: height * 0.8,
+        height,
       }}
     >
-      <div
-        className='value-content__background'
-        data-aos='fade-left'
-        data-aos-once='true'
-        data-aos-delay='700'
-      />
       <div className='value-content grid'>
         <div className='value-content__title'>
-          <span className='value-content__title-text'>我们能带来什么</span>
-          <span className='value-content__label'>借助甘邻智慧社区方案</span>
+          <p className='value-content__title-text'>
+            <span className='value-content__title-text--active'>我们</span>
+            能带来什么
+          </p>
+          <p className='value-content__label'>借助甘邻智慧社区方案</p>
         </div>
 
         <div className='value-content__list'>
@@ -105,6 +102,7 @@ const ValueContent: FC<Props> = (props) => {
                   {valueItem.description}
                 </p>
               </div>
+              <div className='value-content__item__bottom-line' />
             </div>
           ))}
         </div>

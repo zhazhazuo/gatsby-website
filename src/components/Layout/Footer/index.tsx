@@ -32,7 +32,8 @@ const FooterInfo = ({
 
   return (
     <a className={ClassName} onClick={onClick} href={href}>
-      <i className={icon} />
+      {/* TODO 对齐问题待解决 */}
+      {/* <i className={icon} /> */}
       <p className='footer-info__text'>{text}</p>
     </a>
   )

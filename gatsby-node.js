@@ -56,6 +56,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /react-modal-video/,
             use: loaders.null(),
           },
+          {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: "url-loader",
+          },
         ],
       },
     })

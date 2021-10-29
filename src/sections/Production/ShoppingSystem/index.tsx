@@ -55,12 +55,15 @@ const ShoppingSystem: FC<Props> = (props) => {
           data-aos='fade'
           data-aos-duration='900'
         >
-          <p className='shopping-system__title'>甘邻商家中心</p>
+          <p className='shopping-system__title'>
+            甘邻
+            <span className='shopping-system__title--active'>商家中心</span>
+          </p>
           <p className='shopping-system__label'>
             连接商户与社区居民；多种经营，无限可能
           </p>
           <div className='shopping-system__controller'>
-            <CustomButton type='primary' size='large'>
+            <CustomButton type='primary' size='default'>
               立即访问
             </CustomButton>
           </div>
@@ -68,12 +71,6 @@ const ShoppingSystem: FC<Props> = (props) => {
         <div className='shopping-system__content'>
           <div className='shopping-system__show'>
             <div className='shopping-system__show__content'>
-              <div
-                className='shopping-system__show__background'
-                data-aos='fade-right'
-                data-aos-duration='900'
-                data-aos-delay='400'
-              />
               <div
                 className='shopping-system__show__img'
                 data-aos='fade-right'

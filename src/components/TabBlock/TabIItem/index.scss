@@ -31,9 +31,19 @@
     height: 4px;
 
     &--active {
-      background-color: var(--primary-color);
       animation: bounceIn;
       animation-duration: 800ms;
     }
+  }
+}
+
+.tab-item--primary {
+  .tab-item__indicator--active {
+    background-color: var(--primary-color);
+  }
+}
+.tab-item--secondary {
+  .tab-item__indicator--active {
+    background-color: var(--secondary-color);
   }
 }

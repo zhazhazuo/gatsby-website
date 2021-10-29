@@ -5,34 +5,10 @@
   width: 100%;
   height: 100%;
 
-  &__img-wrapper {
-    position: relative;
-    min-width: 500px;
-    height: 100%;
-  }
-
   &__img {
-    @include elevation--level8;
-
-    position: absolute;
     z-index: 2;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
-  }
-
-  &__img-background {
-    @include elevation--level4;
-    position: absolute;
-    top: 16%;
-    right: -7%;
-    z-index: 1;
-    width: 180px;
-    height: 180px;
-    border-radius: 20%;
-    transform: rotate(65deg);
-    background-color: var(--light-primary-color);
+    // width: 45%;
+    height: 386px;
   }
 
   &__description {
@@ -40,13 +16,13 @@
   }
 
   &__title {
-    @include H3;
+    @include H2;
   }
 
   &__text {
     @include Body1;
 
-    margin-top: var(--space-md);
+    margin-top: var(--space-xs);
 
     color: var(--light-text-color);
   }
@@ -54,16 +30,6 @@
 
 .object-item--reverse {
   flex-direction: row-reverse;
-
-  .object-item__img-background {
-    width: 180px;
-    height: 180px;
-    left: -9%;
-    top: 9%;
-    transform: rotate(150deg);
-    border-radius: 32px;
-    background-color: var(--secondary-color);
-  }
 }
 
 @include breakpoint(0, sm) {

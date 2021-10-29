@@ -43,8 +43,11 @@ const AboutUs: FC<Props> = (props) => {
       <div className='about-us__banner' />
       <div className='about-us__content'>
         <div className='about-us__info'>
-          <div className='about-us__info-logo' />
-          <p className='about-us__info-title'>甘邻科技</p>
+          {/* <div className='about-us__info-logo' /> */}
+          <p className='about-us__info-title'>
+            <span className='about-us__info-title--active'>甘邻</span>
+            科技
+          </p>
           <p className='about-us__description'>
             是一家致力于社区物业数字化，和在线生活服务的创新型企业。
           </p>

@@ -6,6 +6,7 @@
   background-color: var(--gray-background-color);
 
   min-width: 1280px;
+  max-height: 789px;
 }
 
 .value-content__background {
@@ -35,14 +36,18 @@
   }
 
   &__title-text {
-    @include H3;
+    @include H2;
+
+    &--active {
+      color: var(--light-secondary-color);
+    }
   }
 
   &__label {
-    @include Subtitle2;
+    @include Body2;
 
     margin-top: var(--space-sm);
-    color: var(--gray-text-color);
+    color: var(--light-text-color);
   }
 
   &__list {
@@ -51,19 +56,32 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-row-gap: var(--space-lg);
+    grid-row-gap: var(--space-md);
+    grid-column-gap: var(--space-md);
     justify-items: center;
   }
 
   &__item {
-    @include elevation--level4;
+    @include elevation-card;
     display: flex;
+    align-items: center;
+
+    position: relative;
+
     box-sizing: border-box;
-    width: 80%;
-    height: 150px;
+    width: 100%;
+    height: 180px;
     padding: var(--space-md);
     border-radius: 8px;
     background-color: var(--surface-color);
+
+    cursor: pointer;
+
+    &:hover {
+      .value-content__item__bottom-line {
+        background-color: var(--light-secondary-color);
+      }
+    }
 
     &__left {
       flex: 1;
@@ -73,10 +91,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: var(--gray-background-color);
+      width: 74px;
+      height: 74px;
+      border-radius: 16px;
+      border: 1px solid var(--light-border-color);
       color: var(--primary-color);
       font-size: 24px;
     }
@@ -86,13 +104,22 @@
     }
 
     &__title {
-      @include Subtitle1;
+      @include H4;
       margin-bottom: var(--space-xs);
     }
 
     &__description {
       @include Body1;
       color: var(--light-text-color);
+    }
+
+    &__bottom-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      border-radius: 0px 0px 12px 12px;
     }
   }
 }

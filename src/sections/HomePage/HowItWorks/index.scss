@@ -3,6 +3,7 @@
 }
 
 .how-it-works {
+  max-height: 789px;
   overflow-x: hidden;
 
   &__description {
@@ -12,12 +13,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     &__title {
-      @include H3;
-      width: 390px;
+      @include H2;
       margin-bottom: var(--space-lg);
+
+      &--active {
+        color: var(--secondary-color);
+      }
     }
 
     &__feature-list {
@@ -34,41 +38,12 @@
     justify-content: center;
 
     &__img {
-      @include elevation--level8;
-
-      position: relative;
-      width: 400px;
-      height: 80%;
-      border-radius: 16px;
-      background-size: cover;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       background-image: url("../../../assets/how-it-work-show.png");
-    }
-
-    &__background {
-      position: absolute;
-    }
-
-    &__background-left {
-      top: -6%;
-      left: -10%;
-
-      width: 150px;
-      height: 200px;
-      background-repeat: no-repeat;
-      background-image: url("../../../assets/dot-pattern-blue.png");
-    }
-
-    &__background-right {
-      top: 0%;
-      right: 0%;
-
-      width: 200px;
-      height: 0px;
-      padding-bottom: 119%;
-      opacity: 0.6;
-      border-radius: 0 16px 0 0;
-      background-repeat: no-repeat;
-      background-image: url("../../../assets/right-circlehalf-shape.png");
     }
   }
 }

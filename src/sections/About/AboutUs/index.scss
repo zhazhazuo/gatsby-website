@@ -6,7 +6,7 @@
   &__banner {
     width: 100%;
     height: 0;
-    padding-bottom: 25%;
+    padding-bottom: 23.9%;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../../../assets/section/About/about-banner.png");
@@ -19,25 +19,30 @@
   }
 
   &__description {
-    @include Body1;
+    @include Body2;
     color: var(--light-text-color);
+    margin-top: var(--space-md);
   }
 
   &__info {
+    margin-top: var(--space-xxl);
     margin-bottom: var(--space-xl);
 
-    &-logo {
-      width: 120px;
-      height: 120px;
-      margin: var(--space-xl) 0;
+    // &-logo {
+    //   width: 120px;
+    //   height: 120px;
+    //   margin: var(--space-xl) 0;
 
-      background-size: cover;
-      background-image: url("../../../assets/logo.png");
-    }
+    //   background-size: cover;
+    //   background-image: url("../../../assets/logo.png");
+    // }
 
     &-title {
-      @include H2;
-      margin-bottom: var(--space-md);
+      @include H1;
+
+      &--active {
+        color: var(--secondary-color);
+      }
     }
   }
 
@@ -46,7 +51,7 @@
     width: 100%;
     height: 0;
     margin-bottom: var(--space-xxl);
-    padding-bottom: 25%;
+    padding-bottom: 23.8%;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../../../assets/section/About/join-us.png");
@@ -62,14 +67,15 @@
     }
 
     &__title {
-      @include H3;
+      @include H2;
       margin-bottom: var(--space-xxs);
+      color: var(--white-color);
       cursor: pointer;
     }
 
     &__text {
       @include Subtitle1;
-      color: var(--text-color);
+      color: var(--white-color);
       cursor: pointer;
     }
   }

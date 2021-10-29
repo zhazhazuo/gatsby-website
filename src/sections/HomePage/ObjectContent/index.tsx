@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-import { useGetWindowHeight } from "@/common/hooks"
 import BusinessImg from "@/assets/object-company.png"
 import CustomerImg from "@/assets/object-customer.png"
 import ObjectItem from "./ObjectItem"
@@ -14,14 +13,8 @@ type DefaultProps = Readonly<typeof defaultProps>
 type Props = IProps & Partial<DefaultProps>
 
 const ObjectContent: FC<Props> = (props) => {
-  const { height } = useGetWindowHeight()
   return (
-    <div
-      className='object-content__wrapper'
-      style={{
-        height: height,
-      }}
-    >
+    <div className='object-content__wrapper'>
       <div className='object-content grid'>
         <div className='object-content--left'>
           <ObjectItem

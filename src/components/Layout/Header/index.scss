@@ -42,6 +42,7 @@
 
       background-repeat: no-repeat;
       background-size: contain;
+      background-position: center;
       background-image: url("../../../assets/logo.png");
     }
   }
@@ -64,15 +65,16 @@
     justify-content: flex-end;
 
     &__try-button {
-      @include Button;
+      @include Subtitle2;
+      line-height: 21px;
 
       display: flex;
       align-items: center;
 
       padding: var(--space-xs) var(--space-sm);
-      border-radius: 8px;
+      border-radius: 22px;
       background-color: transparent;
-      border: 1px solid transparent;
+      border: 1px solid var(--light-border-color);
       color: var(--text-color);
       cursor: pointer;
       transition: transitionFunc(all, 400ms);
@@ -82,6 +84,7 @@
 
         color: var(--on-primary-color);
         background-color: var(--primary-color);
+        border: 1px solid transparent;
 
         .header__controller__icon {
           @include flip-vertical-bottom;
@@ -152,7 +155,7 @@
 }
 
 // 响应式布局样式
-@include breakpoint(0, sm) {
+@include breakpoint(0, md) {
   .header__logo {
     grid-column: 1 / 7;
   }
@@ -169,5 +172,11 @@
     display: flex;
     pointer-events: visible;
     grid-column: 7 / 14;
+  }
+}
+
+@include breakpoint(md, lg) {
+  .header__bar {
+    grid-column: 5 / 12;
   }
 }

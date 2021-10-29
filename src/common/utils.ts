@@ -1,4 +1,5 @@
 import { navigate } from "gatsby-link"
+import { getGlobalData, ILinkInfo } from "./global"
 
 export const downloadHandle = () => {
   const linkAndroid = "http://cdn.img.ganlin.fun/store/ganlin.apk"
@@ -18,4 +19,9 @@ export const downloadHandle = () => {
   } else {
     navigate(`https://apps.apple.com/cn/app/%E7%94%98%E9%82%BB/id1544613611`)
   }
+}
+
+export const navigateHandle = (key: keyof ILinkInfo) => () => {
+  const linkInfo = getGlobalData("linkInfo")
+  navigate(linkInfo[key])
 }

@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import { map, compose } from "ramda"
+import { navigateHandle } from "@/common/utils"
 import TextLink, { Props as TextLinkProps } from "../../TextLink"
 import HeaderMenu from "./HeaderMenu"
 import HeaderDrawer from "./HeaderDrawer"
@@ -56,7 +57,10 @@ const Header: FC<Props> = (props) => {
           )}
         </div>
         <div className='header__controller'>
-          <button className='header__controller__try-button'>
+          <button
+            className='header__controller__try-button'
+            onClick={navigateHandle("productionCenter")}
+          >
             <span>开始体验</span>
             <i className='ri-space-ship-line header__controller__icon'></i>
           </button>

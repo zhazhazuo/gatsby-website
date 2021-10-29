@@ -2,6 +2,10 @@ interface ISystemInfo {
   systemHeight: number
 }
 
+export interface ILinkInfo {
+  productionCenter: string
+}
+
 interface IContactsInfoItem {
   name: string
   phoneNumber: string
@@ -19,11 +23,16 @@ interface IContactsInfo {
 }
 
 interface IGlobalData {
+  linkInfo: ILinkInfo
   systemInfo: ISystemInfo
   contactsInfo: IContactsInfo
 }
 
 const globalData: IGlobalData = {
+  linkInfo: {
+    productionCenter:
+      "http://account-test.ganlin.com/user/login?callback=http://cp-test.ganlin.com/user/login&followup=http://cp-test.ganlin.com/product/m&app_id=aca4sos3mvzzvc",
+  },
   systemInfo: {
     systemHeight: 0,
   },

@@ -28,13 +28,12 @@ const ObjectItem: FC<Props> = (props) => {
 
   return (
     <div className={ClassName}>
-      <div
-        className='object-item__img-wrapper'
+      <img
+        className='object-item__img'
+        src={img}
+        alt=''
         data-aos={isReverse ? "fade-left" : "fade-right"}
-      >
-        <img className='object-item__img' src={img} alt='' />
-        <div className='object-item__img-background' />
-      </div>
+      />
 
       <div className='object-item__description'>
         <div

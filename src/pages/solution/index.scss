@@ -22,29 +22,35 @@
   margin-bottom: var(--space-lg);
   cursor: pointer;
   transition: transitionFunc(all, 400ms);
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .catalogue__tag {
   width: 20px;
-  height: 8px;
-  border-radius: 4px;
+  height: 12px;
+  border-radius: 8px;
   margin-right: var(--space-xs);
 
-  background-color: var(--light-primary-color);
+  background-color: var(--red-color);
   transition: transitionFunc(all, 400ms);
 }
 
 .catalogue__text {
-  @include Body2;
+  @include Body1;
   color: var(--gray-text-color);
+  transition: transitionFunc(all, 400ms);
 }
 
 .catalogue__item--active {
   opacity: 1;
 
   .catalogue__tag {
-    width: 32px;
+    width: 26px;
+    height: 16px;
+  }
+
+  .catalogue__text {
+    font-size: var(--text-xl);
   }
 }
 

@@ -37,4 +37,8 @@
     16px 32px 32px hsl(var(--shadow-color) / 0.2);
 }
 
+@mixin elevation-card {
+  box-shadow: 0px 20px 24px 0px rgba(170, 170, 170, 0.2);
+}
+
 $zIndex-highest: 999;

@@ -190,7 +190,10 @@ const ManagementSystem: FC<Props> = (props) => {
             data-aos='fade-right'
             data-aos-duration='700'
           >
-            <div className='management-system__title'>数字物业平台</div>
+            <div className='management-system__title'>
+              <span className='management-system__title--active'>数字</span>
+              物业平台
+            </div>
             <div className='management-system__description'>
               简单易用，不失强大
             </div>
@@ -199,7 +202,7 @@ const ManagementSystem: FC<Props> = (props) => {
               data-aos='fade-right'
               data-aos-delay='300'
             >
-              <CustomButton type='primary' size='large'>
+              <CustomButton type='primary' size='default'>
                 立即访问
               </CustomButton>
             </div>
@@ -222,12 +225,7 @@ const ManagementSystem: FC<Props> = (props) => {
           </div>
         </div>
       </section>
-      <div
-        className='management-system__detail'
-        style={{
-          height: height * 0.8,
-        }}
-      >
+      <div className='management-system__detail'>
         <TabBlock tabList={tabList} tabHeaderColor='#fff' />
       </div>
     </Fragment>

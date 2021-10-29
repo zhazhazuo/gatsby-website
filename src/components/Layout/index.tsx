@@ -25,10 +25,10 @@ const Layout: FC<Props> = (props) => {
       <Helmet>
         <title>甘邻</title>
         <link rel='icon' type='image/png' href={LogoIcon} />
-        <style>
+        {/* <style>
           @import
           url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
-        </style>
+        </style> */}
         {/* 百度统计 */}
         <script>
           {`var _hmt = _hmt || [];

@@ -26,10 +26,9 @@ const GirdItem: FC<IGirdItemProps> = ({ icon, title, content }) => {
       <div className='grid-item__icon'>
         <i className='ri-pie-chart-line'></i>
       </div>
-      <div className='grid-item__description'>
-        <div className='grid-item__title'>{title}</div>
-        <div className='grid-item__text'>{content}</div>
-      </div>
+      <div className='grid-item__title'>{title}</div>
+      <div className='grid-item__text'>{content}</div>
+      <div className='grid-item__bottom-line' />
     </div>
   )
 }
@@ -42,7 +41,7 @@ const ModuleGird: FC<Props> = (props) => {
       className='module-grid'
       style={{
         gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-        // gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+        gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
       }}
     >
       {data.map((item, index) => (

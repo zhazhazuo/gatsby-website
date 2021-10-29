@@ -1,13 +1,13 @@
 .value-item {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xxl);
 
   &-title {
-    @include H3;
-    margin-bottom: var(--space-sm);
+    @include H2;
+    margin-bottom: var(--space-md);
   }
 
   &__description {
-    @include Body1;
+    @include Body2;
     color: var(--light-text-color);
   }
 }
