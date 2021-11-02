@@ -1,13 +1,13 @@
 @import "./tool.scss";
 
 @mixin H1 {
-  font-size: 54px;
+  font-size: var(--text-xxxxxl);
   font-family: "Microsoft YaHei UI Semi Bold";
   letter-spacing: 4px;
   line-height: 72px;
 }
 @mixin H2 {
-  font-size: 42px;
+  font-size: var(--text-xxxxl);
   font-family: "Microsoft YaHei UI Semi Bold";
   line-height: 56px;
   letter-spacing: 2px;

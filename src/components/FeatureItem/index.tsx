@@ -17,9 +17,12 @@ const FeatureItem: FC<Props> = (props) => {
   const { icon, title, text } = props
   return (
     <div className='feature-item'>
-      <div className='feature-item__img'>
-        <i className={icon}></i>
-      </div>
+      <div
+        className='feature-item__img'
+        style={{
+          backgroundImage: `url(${icon})`,
+        }}
+      />
       <div className='feature-item__description'>
         <p className='feature-item__title'>{title}</p>
         <p className='feature-item__text'>{text}</p>

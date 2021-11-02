@@ -1,10 +1,15 @@
 import React, { FC } from "react"
+import { navigateHandle } from "@/common/utils"
 import { useGetWindowHeight } from "@/common/hooks"
 import FeatureItem, {
   Props as IFeatureItemProps,
 } from "@/components/FeatureItem"
 import CustomButton from "@/components/CustomButton"
 import AnchorPoint from "@/components/AnchorPoint"
+import IconGoodsManagement from "@/assets/section/ShoppingSystem/icon-goodsManagement.png"
+import IconMarketingManagement from "@/assets/section/ShoppingSystem/icon-marketingManagement.png"
+import IconStockManagement from "@/assets/section/ShoppingSystem/icon-stockManagement.png"
+import IconOrderManagement from "@/assets/section/ShoppingSystem/icon-orderManagement.png"
 import "./index.scss"
 
 interface IProps {}
@@ -17,22 +22,22 @@ type Props = IProps & Partial<DefaultProps>
 
 const featureList: IFeatureItemProps[] = [
   {
-    icon: "ri-file-list-3-line",
+    icon: IconOrderManagement,
     title: "订单管理",
     text: "处理商家订单，操作退、换、拒收等",
   },
   {
-    icon: "ri-gift-2-line",
+    icon: IconGoodsManagement,
     title: "商品管理",
     text: "创建商品，管理上下架等",
   },
   {
-    icon: "ri-store-line",
+    icon: IconMarketingManagement,
     title: "营销管理",
     text: "开展销售活动，优惠券等",
   },
   {
-    icon: "ri-home-6-line",
+    icon: IconStockManagement,
     title: "库存管理",
     text: "入库商品，设置销售库存，管理库存记录等",
   },
@@ -63,7 +68,11 @@ const ShoppingSystem: FC<Props> = (props) => {
             连接商户与社区居民；多种经营，无限可能
           </p>
           <div className='shopping-system__controller'>
-            <CustomButton type='primary' size='default'>
+            <CustomButton
+              type='primary'
+              size='default'
+              onClick={navigateHandle("businessCenter")}
+            >
               立即访问
             </CustomButton>
           </div>

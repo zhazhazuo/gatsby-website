@@ -21,6 +21,14 @@
     }
   }
 
+  &__tab-list__icon {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
   &__description {
     @include Body2;
     color: var(--gray-text-color);
@@ -84,6 +92,8 @@
 
     &__detail {
       height: auto !important;
+      padding: 0;
+      padding-top: var(--space-xs);
     }
   }
 }

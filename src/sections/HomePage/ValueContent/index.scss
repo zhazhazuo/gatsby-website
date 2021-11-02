@@ -39,7 +39,7 @@
     @include H2;
 
     &--active {
-      color: var(--light-secondary-color);
+      color: var(--dark-secondary-color);
     }
   }
 
@@ -88,15 +88,10 @@
     }
 
     &__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 74px;
       height: 74px;
-      border-radius: 16px;
-      border: 1px solid var(--light-border-color);
-      color: var(--primary-color);
-      font-size: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
     &__text {
@@ -120,7 +115,68 @@
       width: 100%;
       height: 8px;
       border-radius: 0px 0px 12px 12px;
+
+      transition: transitionFunc(all, 400ms);
     }
+  }
+}
+
+.value-content-item {
+  @include elevation-card;
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 180px;
+  padding: var(--space-md);
+  border-radius: 8px;
+  background-color: var(--surface-color);
+
+  cursor: pointer;
+
+  &:hover {
+    .value-content-item__bottom-line {
+      background-color: var(--light-secondary-color);
+    }
+  }
+
+  &__left {
+    flex: 1;
+  }
+
+  &__icon {
+    width: 74px;
+    height: 74px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    flex: 5;
+  }
+
+  &__title {
+    @include H4;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__description {
+    @include Body1;
+    color: var(--light-text-color);
+  }
+
+  &__bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 0px 0px 12px 12px;
+
+    transition: transitionFunc(all, 400ms);
   }
 }
 
@@ -129,6 +185,7 @@
     box-sizing: border-box;
     height: auto !important;
     min-width: auto;
+    max-height: none;
   }
 
   .value-content__background {

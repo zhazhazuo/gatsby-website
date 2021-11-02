@@ -41,7 +41,10 @@ const ObjectItem: FC<Props> = (props) => {
           data-aos='fade-up'
           data-aos-delay='300'
         >
-          {title}
+          <span className='object-item__title--active'>
+            {title.slice(0, 2)}
+          </span>
+          {title.slice(2, 4)}
         </div>
         <div
           className='object-item__text'

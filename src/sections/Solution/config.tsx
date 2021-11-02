@@ -5,10 +5,14 @@ import AccessImg from "@/assets/section/Solution/access-show.png"
 import PayImg from "@/assets/section/Solution/pay-show.png"
 import RepairImg from "@/assets/section/Solution/repair-show.png"
 import ShoppingImg from "@/assets/section/Solution/shopping-show.png"
+import IconCommunityAccess from "@/assets/section/Solution/icon-communityAccess.png"
+import IconCommunityShop from "@/assets/section/Solution/icon-communityShop.png"
+import IconRepair from "@/assets/section/Solution/icon-repair.png"
+import IconSmartCharge from "@/assets/section/Solution/icon-smartCharge.png"
 
 export const solutionList: SolutionBlockProps[] = [
   {
-    logo: "ri-walk-line",
+    logo: IconCommunityAccess,
     title: "小区出行",
     style: "secondary",
     description:
@@ -16,7 +20,7 @@ export const solutionList: SolutionBlockProps[] = [
     showContent: <ShowContent img={AccessImg} />,
   },
   {
-    logo: "ri-water-flash-fill",
+    logo: IconSmartCharge,
     title: "智能缴费",
     style: "secondary",
     description:
@@ -24,7 +28,7 @@ export const solutionList: SolutionBlockProps[] = [
     showContent: <ShowContent img={PayImg} />,
   },
   {
-    logo: "ri-tools-fill",
+    logo: IconRepair,
     title: "报事报修",
     style: "secondary",
     description:
@@ -32,7 +36,7 @@ export const solutionList: SolutionBlockProps[] = [
     showContent: <ShowContent img={RepairImg} />,
   },
   {
-    logo: "ri-shopping-cart-2-fill",
+    logo: IconCommunityShop,
     title: "社区电商",
     style: "secondary",
     description:

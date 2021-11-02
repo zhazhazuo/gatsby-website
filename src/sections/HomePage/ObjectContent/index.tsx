@@ -15,7 +15,7 @@ type Props = IProps & Partial<DefaultProps>
 const ObjectContent: FC<Props> = (props) => {
   return (
     <div className='object-content__wrapper'>
-      <div className='object-content grid'>
+      <div className='object-content'>
         <div className='object-content--left'>
           <ObjectItem
             title='物业企业'

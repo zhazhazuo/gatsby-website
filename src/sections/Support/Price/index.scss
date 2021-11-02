@@ -37,16 +37,10 @@
     flex-direction: column;
 
     &__title {
-      @include H4;
-      margin-bottom: var(--space-sm);
-    }
+      @include H2;
+      margin-top: var(--space-xl);
 
-    &--free {
-      flex: 1;
-    }
-
-    &--value {
-      flex: 1;
+      margin-bottom: var(--space-lg);
     }
 
     .price-product-item {
@@ -55,7 +49,7 @@
       justify-content: center;
       align-items: center;
 
-      margin-right: var(--space-md);
+      margin-right: var(--space-xl);
       margin-bottom: var(--space-md);
 
       &:nth-of-type(10) {
@@ -63,25 +57,17 @@
       }
 
       &__icon {
-        width: 100px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: var(--icon-xl);
-        color: var(--gray-text-color);
+        width: 88px;
+        height: 88px;
+        background-repeat: no-repeat;
+        background-size: contain;
 
-        background-size: cover;
+        margin-bottom: var(--space-xs);
       }
 
-      &--free {
-        background-image: url("../../../assets/section/Support/free-shadow.png");
-        background-repeat: no-repeat;
-      }
-
-      &--value {
-        background-repeat: no-repeat;
-        background-image: url("../../../assets/section/Support/value-shadow.png");
+      &__title {
+        @include Body2;
+        color: var(--light-text-color);
       }
     }
   }

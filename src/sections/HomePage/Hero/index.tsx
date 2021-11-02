@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { navigateHandle } from "@/common/utils"
-import { useGetWindowHeight } from "@/common/hooks"
+import { useGetWindowHeight, useIsMobile } from "@/common/hooks"
 import CustomButton from "@/components/CustomButton"
 import "./index.scss"
 
@@ -14,13 +14,14 @@ type Props = IProps & Partial<DefaultProps>
 
 const Hero: FC<Props> = (props) => {
   const { height } = useGetWindowHeight()
+  const isMobile = useIsMobile()
 
   return (
     <div className='hero__wrapper'>
       <div
         className='hero'
         style={{
-          height: height * 1.2,
+          height: isMobile ? height : height * 1.2,
         }}
       >
         <div className='hero__text' data-aos='zoom-in' data-aos-duration='600'>

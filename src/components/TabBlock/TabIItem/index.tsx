@@ -20,7 +20,7 @@ export type Props = IProps & Partial<DefaultProps>
 const TabItem: FC<Props> = (props) => {
   const { active, type, text, icon, onClick } = props
 
-  const ClassName = cls({
+  const ClassName = cls("tab-item", {
     "tab-item--primary": type === "primary",
     "tab-item--secondary": type === "secondary",
   })

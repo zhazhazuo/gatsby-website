@@ -15,16 +15,8 @@
   &__logo {
     width: 74px;
     height: 74px;
-    border-radius: 32.8%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--primary-color);
-    font-size: 40px;
-
-    border: 2px solid var(--border-color);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &__title {

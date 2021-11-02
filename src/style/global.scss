@@ -25,8 +25,8 @@
   --text-xl: calc(var(--text-lg) * var(--text-scale-sm-ratio)); // 20px
   --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 24px
   --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 28px
-  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio)); // 32px
-  --text-xxxxxl: calc(var(--text-xxxxl) * var(--text-scale-lg-ratio)); // 32px
+  --text-xxxxl: calc(var(--text-xxxl) * 1.626); // 42px
+  --text-xxxxxl: calc(var(--text-xxxl) * 2.06); // 54px
 }
 
 body {
@@ -74,7 +74,7 @@ a {
   }
 
   body {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .grid {
@@ -102,10 +102,10 @@ a {
   font-family: "Microsoft YaHei UI Semi Bold";
   src: url("../assets/font/MicrosoftYaHeiUISemibold.ttf");
 }
-@font-face {
-  font-family: "Microsoft YaHei UI Bold";
-  src: url("../assets/font/MicrosoftYaHeiUIBold.ttf");
-}
+// @font-face {
+//   font-family: "Microsoft YaHei UI Bold";
+//   src: url("../assets/font/MicrosoftYaHeiUIBold.ttf");
+// }
 @font-face {
   font-family: "Microsoft Ya Hei UI";
   src: url("../assets/font/MicrosoftYaHeiUI.ttf");

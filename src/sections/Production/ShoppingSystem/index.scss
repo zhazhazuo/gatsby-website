@@ -72,6 +72,10 @@
 }
 
 @include breakpoint(0, sm) {
+  .shopping-system__wrapper {
+    max-height: none;
+  }
+
   .shopping-system {
     display: block;
     padding: var(--space-lg) 0;
@@ -83,6 +87,8 @@
     &__show {
       grid-column: 1 / 13;
       grid-row: 1 / 4;
+
+      height: 240px;
 
       margin: var(--space-lg) 0;
     }

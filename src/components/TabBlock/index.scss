@@ -19,7 +19,6 @@
   &__tab-list {
     display: inline-grid;
     grid-column-gap: var(--space-xl);
-    overflow: scroll;
   }
 
   &__content {
@@ -30,5 +29,11 @@
 
     display: flex;
     justify-content: center;
+  }
+}
+
+@include breakpoint(0, sm) {
+  .tab-block__tab-list {
+    overflow: scroll;
   }
 }

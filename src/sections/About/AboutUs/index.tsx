@@ -74,7 +74,7 @@ const AboutUs: FC<Props> = (props) => {
       <div className='about-us__connect-us'>
         <div className='about-us__connect-us__title'>联系我们</div>
         <ConnectItem
-          title='商务合作·产品演示'
+          title='商务合作 · 产品演示'
           backgroundImg={WuhanImg}
           infos={[
             {
@@ -95,7 +95,7 @@ const AboutUs: FC<Props> = (props) => {
           ]}
         />
         <ConnectItem
-          title='商务合作·产品演示'
+          title='商务合作 · 产品演示'
           backgroundImg={BeijingImg}
           infos={[
             {

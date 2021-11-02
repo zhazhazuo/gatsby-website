@@ -57,6 +57,14 @@
   &__text {
     margin-left: var(--space-xxs);
   }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .footer-info--enable {

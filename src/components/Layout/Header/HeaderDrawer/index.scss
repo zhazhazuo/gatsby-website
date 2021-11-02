@@ -1,9 +1,27 @@
 .header-drawer {
+  @include elevation--level4;
+  position: absolute;
+  top: 72px;
+  z-index: -1;
+
   display: flex;
   justify-content: center;
 
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  min-height: 70px;
-  padding: 0 var(--space-xs) var(--space-md);
+  min-height: 72px;
+  padding: var(--space-md) var(--space-xs);
+
+  background-color: var(--background-color);
+
+  &--hidden {
+    animation: slideOutUp;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+  }
+
+  &--visible {
+    animation: slideInDown;
+    animation-duration: 300ms;
+  }
 }

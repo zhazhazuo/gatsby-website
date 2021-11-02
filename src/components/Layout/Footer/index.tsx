@@ -1,6 +1,8 @@
 import React, { FC } from "react"
 import cls from "classnames"
 import { getGlobalData } from "@/common/global"
+import IconPhone from "@/assets/icon/icon-phone.png"
+import IconEmail from "@/assets/icon/icon-email.png"
 import "./index.scss"
 
 interface IProps {}
@@ -32,8 +34,12 @@ const FooterInfo = ({
 
   return (
     <a className={ClassName} onClick={onClick} href={href}>
-      {/* TODO 对齐问题待解决 */}
-      {/* <i className={icon} /> */}
+      <i
+        className='footer-info__icon'
+        style={{
+          backgroundImage: `url(${icon})`,
+        }}
+      />
       <p className='footer-info__text'>{text}</p>
     </a>
   )
@@ -53,12 +59,12 @@ const Footer: FC<Props> = (props) => {
             <FooterInfo
               enable
               text={second.phoneNumber}
-              icon='ri-customer-service-2-line'
+              icon={IconPhone}
               href={`tel:${second.phoneNumber}`}
             />
             <FooterInfo
               text={serviceMail}
-              icon='ri-mail-line'
+              icon={IconEmail}
               enable
               href={`mailto:${serviceMail}`}
             />

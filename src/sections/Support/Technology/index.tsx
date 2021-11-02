@@ -1,6 +1,8 @@
 import React, { FC } from "react"
 import { useGetWindowHeight } from "@/common/hooks"
 import { getGlobalData } from "@/common/global"
+import IconPhone from "@/assets/icon/icon-phone.png"
+import IconEmail from "@/assets/icon/icon-email.png"
 import "./index.scss"
 
 interface IProps {}
@@ -29,8 +31,22 @@ const Technology: FC<Props> = (props) => {
             我们有专业的技术服务团队，为客户和用户提供 7*24 小时免费电话支持服务
           </p>
           <p className='technology__contact-information'>
-            <i className='ri-phone-line technology__icon'></i>
+            <i
+              className='technology__icon'
+              style={{
+                backgroundImage: `url(${IconPhone})`,
+              }}
+            ></i>
             189 4292 9577
+          </p>
+          <p className='technology__contact-information'>
+            <i
+              className='technology__icon'
+              style={{
+                backgroundImage: `url(${IconEmail})`,
+              }}
+            ></i>
+            <a href={`mailto:${serviceMail}`}>{serviceMail}</a>
           </p>
         </div>
         <div className='technology__info-item'>
@@ -39,11 +55,22 @@ const Technology: FC<Props> = (props) => {
             针对门禁等设备安装与检修，我们为您提供完善的技术支持与施工资源
           </p>
           <p className='technology__contact-information'>
-            <i className='ri-phone-line technology__icon'></i>189 4292 9577
+            <i
+              className='technology__icon'
+              style={{
+                backgroundImage: `url(${IconPhone})`,
+              }}
+            ></i>
+            189 4292 9577
           </p>
           <p className='technology__contact-information'>
-            <i className='ri-mail-line technology__icon'></i>
-            {serviceMail}
+            <i
+              className='technology__icon'
+              style={{
+                backgroundImage: `url(${IconEmail})`,
+              }}
+            ></i>
+            <a href={`mailto:${serviceMail}`}>{serviceMail}</a>
           </p>
         </div>
       </div>

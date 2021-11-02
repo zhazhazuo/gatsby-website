@@ -26,27 +26,18 @@
   cursor: pointer;
 
   &:hover {
-    .grid-item__icon {
-      background-color: var(--primary-color);
-      border: 1px solid transparent;
-    }
-
     .grid-item__bottom-line {
       background-color: var(--primary-color);
     }
   }
 
   &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 44px;
     height: 44px;
-    border: 1px solid var(--light-border-color);
-    border-radius: 12px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     margin-bottom: var(--space-md);
-
-    transition: transitionFunc(all, 400ms);
   }
 
   &__title {
@@ -77,5 +68,13 @@
 @include breakpoint(0, sm) {
   .module-grid {
     display: block;
+    box-sizing: border-box;
+    padding: 0 16px;
+  }
+
+  .grid-item {
+    box-shadow: none;
+    border: 1px solid var(--light-border-color);
+    margin-top: var(--space-md);
   }
 }

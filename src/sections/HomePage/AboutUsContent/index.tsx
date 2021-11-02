@@ -28,6 +28,7 @@ const AboutUsContent: FC<Props> = (props) => {
   return (
     <div className={ClassName}>
       <div className='about-us-content__background' />
+      <div className='about-us-content__mark' />
       <div
         className='about-us-content__title'
         data-aos='fade'

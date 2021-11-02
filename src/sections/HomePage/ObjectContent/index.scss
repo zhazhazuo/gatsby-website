@@ -1,13 +1,13 @@
 .object-content__wrapper {
-  position: relative;
-
   overflow: hidden;
   background-color: var(--surface-color);
   min-width: 1280px;
+  padding: var(--space-xxl) 0;
 }
 
 .object-content {
-  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 
   &--left {
     grid-column: 1 / 13;

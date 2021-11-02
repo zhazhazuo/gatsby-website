@@ -1,7 +1,6 @@
 import React from "react"
 import { GlobalProvider } from "@/context"
 import Layout from "@/components/Layout"
-import "remixicon/fonts/remixicon.css"
 import "@/style/global.scss"
 
 const wrapPageElement = ({ element, props }) => {

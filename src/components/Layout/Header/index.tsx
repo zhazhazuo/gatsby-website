@@ -62,7 +62,8 @@ const Header: FC<Props> = (props) => {
             onClick={navigateHandle("productionCenter")}
           >
             <span>开始体验</span>
-            <i className='ri-space-ship-line header__controller__icon'></i>
+
+            <i className='header__controller__icon'></i>
           </button>
         </div>
         <div className='header__hamburger'>
@@ -85,11 +86,12 @@ const Header: FC<Props> = (props) => {
           }))}
         />
       </div>
-      {isShowDrawer && (
-        <HeaderDrawer onMouseEnter={() => onMouseEnterHandle()}>
-          {drawerContent}
-        </HeaderDrawer>
-      )}
+      <HeaderDrawer
+        isShow={isShowDrawer}
+        onMouseEnter={() => onMouseEnterHandle()}
+      >
+        {drawerContent}
+      </HeaderDrawer>
     </header>
   )
 }

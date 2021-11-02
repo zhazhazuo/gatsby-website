@@ -24,7 +24,7 @@ const VideoLink: FC<Props> = (props) => {
       >
         <span className='video-link__text'>进一步了解方案</span>
         <div className='video-link__icon'>
-          <i className='ri-play-fill'></i>
+          <i className='video-link__icon__content' />
         </div>
       </section>
     </Fragment>

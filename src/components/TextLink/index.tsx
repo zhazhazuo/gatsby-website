@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import cls from "classnames"
 import { createPropsGetter } from "@golink/link-ui"
+import IconArrow from "@/assets/icon/icon-arrow.png"
 import "./index.scss"
 
 interface IProps {
@@ -41,12 +42,6 @@ const TextLink: FC<Props> = (props) => {
     "text-link--active": isActive,
   })
 
-  const IconClassName = cls("text-link__icon", {
-    // "ri-arrow-right-s-line": !isDrawer && !isOpenBlank,
-    // "ri-arrow-right-up-line": isDrawer && isOpenBlank,
-    "ri-arrow-down-s-line": isDrawer,
-  })
-
   const clickHandle = () => {
     onClick()
   }
@@ -69,7 +64,12 @@ const TextLink: FC<Props> = (props) => {
       onMouseLeave={onMouseLeaveHandle}
     >
       <span className='text-link__text'>{content}</span>
-      <i className={IconClassName}></i>
+      <div
+        className='text-link__icon'
+        style={{
+          backgroundImage: isDrawer ? `url(${IconArrow})` : "",
+        }}
+      />
     </div>
   )
 }

@@ -12,7 +12,7 @@
   }
 }
 
-@function transitionFunc($type: all, $duration: 300ms) {
+@function transitionFunc($type: all, $duration: 500ms) {
   @return $type $duration cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 

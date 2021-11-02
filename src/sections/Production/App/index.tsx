@@ -85,7 +85,7 @@ const App: FC<Props> = (props) => {
           tabList={[
             {
               text: "应用页面展示",
-              icon: <i className='ri-archive-fill'></i>,
+              icon: "",
               content: <AppShotSwiper shotList={appShotList} />,
             },
           ]}

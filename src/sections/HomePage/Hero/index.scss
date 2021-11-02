@@ -28,9 +28,6 @@
   }
 
   &__show {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     height: 80%;
     &__website {
@@ -78,10 +75,18 @@
 @include breakpoint(0, sm) {
   .hero__wrapper {
     min-width: auto;
+    min-height: auto;
   }
 
-  .hero__title {
-    @include H2;
+  .hero {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__show {
+    flex: 1;
   }
 
   .hero__description {

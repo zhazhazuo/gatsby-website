@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import cls from "classnames"
 import { useGetWindowHeight } from "@/common/hooks"
-import BackgroundImg from "@/assets/section/Support/price-background.png"
+import { freeProductionList, betterProductionList } from "./config"
 import "./index.scss"
 
 interface IProps {}
@@ -12,7 +12,7 @@ type DefaultProps = Readonly<typeof defaultProps>
 
 type Props = IProps & Partial<DefaultProps>
 
-interface IPriceProductItemProps {
+export interface IPriceProductItemProps {
   type: "free" | "value"
   title: string
   icon: string
@@ -24,11 +24,16 @@ const PriceProductItem = ({ icon, type, title }: IPriceProductItemProps) => {
     "price-product-item--free": type === "free",
   })
 
+  const img = require(`@/assets/section/Support/icon-${icon}.png`).default
+
   return (
     <div className={ClassName}>
-      <div className='price-product-item__icon'>
-        <i className='ri-apple-fill'></i>
-      </div>
+      <div
+        className='price-product-item__icon'
+        style={{
+          backgroundImage: `url(${img})`,
+        }}
+      ></div>
       <p className='price-product-item__title'>{title}</p>
     </div>
   )
@@ -53,33 +58,18 @@ const Price: FC<Props> = (props) => {
         <div className='price__content'>
           <p className='price__content__title'>终身免费产品</p>
           <div className='price__content--free'>
-            {Array(16)
-              .fill("")
-              .map((item, index) => (
-                <PriceProductItem
-                  key={index}
-                  icon=''
-                  type='free'
-                  title='智能门禁'
-                />
-              ))}
+            {freeProductionList.map((item, index) => (
+              <PriceProductItem key={index} {...item} />
+            ))}
           </div>
           <p className='price__content__title'>增值产品（按量或一次性买断）</p>
           <div className='price__content--value'>
-            {Array(6)
-              .fill("")
-              .map((item, index) => (
-                <PriceProductItem
-                  key={index}
-                  icon=''
-                  type='value'
-                  title='智能门禁'
-                />
-              ))}
+            {betterProductionList.map((item, index) => (
+              <PriceProductItem key={index} {...item} />
+            ))}
           </div>
         </div>
       </div>
-      <img className='price__background' src={BackgroundImg} />
     </section>
   )
 }

@@ -7,7 +7,6 @@
 
   &__img {
     z-index: 2;
-    // width: 45%;
     height: 386px;
   }
 
@@ -17,6 +16,10 @@
 
   &__title {
     @include H2;
+
+    &--active {
+      color: var(--dark-secondary-color);
+    }
   }
 
   &__text {
@@ -90,6 +93,17 @@
 
     &__img-background {
       display: none;
+    }
+  }
+}
+
+@include breakpoint(0, sm) {
+  .object-item {
+    box-sizing: border-box;
+    padding: 0 16px;
+    &__img {
+      width: 100%;
+      height: auto;
     }
   }
 }

@@ -26,9 +26,12 @@ const SolutionBlock: FC<Props> = (props) => {
   return (
     <div className='solution-block grid'>
       <div className='solution-block__description'>
-        <div className={`solution-block__logo solution-block__logo--${style}`}>
-          <i className={logo} />
-        </div>
+        <div
+          className={`solution-block__logo solution-block__logo--${style}`}
+          style={{
+            backgroundImage: `url(${logo})`,
+          }}
+        ></div>
         <div className='solution-block__title'>{title}</div>
         <div className='solution-block__text'>{description}</div>
         <div className='solution-block__button'>

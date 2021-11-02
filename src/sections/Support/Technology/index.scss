@@ -16,31 +16,41 @@
   }
 
   &__title {
-    @include H3;
+    @include H2;
     margin-bottom: var(--space-sm);
   }
 
   &__description {
-    @include Body1;
+    @include Body2;
     color: var(--light-text-color);
     margin-bottom: var(--space-lg);
   }
 
   &__contact-information {
-    @include H5;
+    @include H4;
+    color: var(--text-color);
 
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     margin-bottom: var(--space-xs);
   }
 
   &__icon {
-    margin-right: var(--space-xs);
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-right: var(--space-sm);
   }
 }
 
 @include breakpoint(0, sm) {
   .technology {
+    &__title {
+      @include H3;
+    }
+
     &__show {
       grid-row: 2 / 6;
       background-repeat: no-repeat;
@@ -53,6 +63,15 @@
 
     &__info-item {
       margin-bottom: var(--space-md);
+    }
+
+    &__contact-information {
+      @include Subtitle1;
+    }
+
+    &__icon {
+      font-size: 24px;
+      line-height: 24px;
     }
   }
 }

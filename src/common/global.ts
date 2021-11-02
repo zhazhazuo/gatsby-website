@@ -4,6 +4,8 @@ interface ISystemInfo {
 
 export interface ILinkInfo {
   productionCenter: string
+  propertyCenter: string
+  businessCenter: string
 }
 
 interface IContactsInfoItem {
@@ -31,7 +33,9 @@ interface IGlobalData {
 const globalData: IGlobalData = {
   linkInfo: {
     productionCenter:
-      "http://account-test.ganlin.com/user/login?callback=http://cp-test.ganlin.com/user/login&followup=http://cp-test.ganlin.com/product/m&app_id=aca4sos3mvzzvc",
+      "https://account.ganlin.com/user/login?callback=https://cp.ganlin.com/user/login&followup=https://cp.ganlin.com/product/m&app_id=aca4sos3mvzzvc",
+    businessCenter: "http://sj.ganlin.com/",
+    propertyCenter: "http://wy.ganlin.com/",
   },
   systemInfo: {
     systemHeight: 0,

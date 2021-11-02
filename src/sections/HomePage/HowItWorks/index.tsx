@@ -3,6 +3,9 @@ import { useGetWindowHeight } from "@/common/hooks"
 import FeatureItem, {
   Props as IFeatureItemProps,
 } from "@/components/FeatureItem"
+import AIOTIcon from "@/assets/section/Homepage/icon-aiot.png"
+import PlatformIcon from "@/assets/section/Homepage/icon-digitalPlatform.png"
+import AppIcon from "@/assets/section/Homepage/icon-app.png"
 import "./index.scss"
 import VideoLink from "./VideoLink"
 
@@ -18,17 +21,17 @@ type Props = IProps & Partial<DefaultProps>
 
 const featureList: IFeatureItemProps[] = [
   {
-    icon: "ri-macbook-line",
+    icon: PlatformIcon,
     title: "数字物业平台",
     text: "终身免费的现代物业数字化解决方案",
   },
   {
-    icon: "ri-smartphone-line",
+    icon: AppIcon,
     title: "甘邻 APP",
     text: "社区居民线上服务平台",
   },
   {
-    icon: "ri-camera-2-line",
+    icon: AIOTIcon,
     title: "AIOT 智能硬件",
     text: "包含极具性价比的智能门禁等产品",
   },

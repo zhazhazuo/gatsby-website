@@ -1,5 +1,6 @@
 /* eslint-disable node/no-path-concat */
 const path = require("path")
+const autoperfixer = require("autoprefixer")
 
 const gatsbyRequiredRules = path.join(
   process.cwd(),
@@ -20,6 +21,11 @@ module.exports = {
       resolve: "gatsby-plugin-sass",
       options: {
         additionalData: `@import "./src/style/index.scss";`,
+        postCssPlugins: [
+          autoperfixer({
+            grid: true,
+          }),
+        ],
       },
     },
     {

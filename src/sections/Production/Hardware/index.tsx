@@ -27,19 +27,18 @@ const descriptionList = [
 const Hardware: FC<Props> = (props) => {
   const { height } = useGetWindowHeight()
   return (
-    <section
-      className='hardware grid'
-      style={{
-        height,
-      }}
-    >
+    <section className='hardware'>
       <AnchorPoint pointId='hardware' />
       <div className='hardware__content'>
         <img className='hardware__img' src={HardwareImg} alt='' />
         <div className='hardware__slogan'>
-          <p className='hardware__slogan__title'>二维码门禁</p>
-          <p>为软件重新设计的硬件</p>
-          <p>无需学习，10秒配置上线</p>
+          <p className='hardware__slogan__title'>
+            <span className='hardware__slogan__title--active'>二维码</span>
+            门禁
+          </p>
+          <p className='hardware__slogan__text'>
+            为软件重新设计的硬件 无需学习，10秒配置上线
+          </p>
         </div>
       </div>
       <div className='hardware__description'>

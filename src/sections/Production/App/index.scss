@@ -79,6 +79,10 @@
 
       display: flex;
       justify-content: center;
+
+      &__content {
+        width: 100%;
+      }
     }
   }
 }
