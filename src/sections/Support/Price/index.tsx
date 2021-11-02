@@ -24,7 +24,8 @@ const PriceProductItem = ({ icon, type, title }: IPriceProductItemProps) => {
     "price-product-item--free": type === "free",
   })
 
-  const img = require(`@/assets/section/Support/icon-${icon}.png`).default
+  const img =
+    require(`../../../assets/section/Support/icon-${icon}.png`).default
 
   return (
     <div className={ClassName}>

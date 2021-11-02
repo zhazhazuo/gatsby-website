@@ -18,7 +18,7 @@ const ValueItem = ({
   description,
 }: IValueItemProps) => {
   const [isActive, setIsActive] = useState(false)
-  const img = require(`@/assets/section/Homepage/icon-${
+  const img = require(`../../../assets/section/Homepage/icon-${
     isActive ? `${icon}-active` : icon
   }.png`).default
 

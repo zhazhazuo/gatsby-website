@@ -23,7 +23,7 @@ interface IGirdItemProps {
 const GirdItem: FC<IGirdItemProps> = ({ icon, title, content }) => {
   const [isActive, setIsActive] = useState(false)
 
-  const img = require(`@/assets/section/ManagementSystem/icon-${
+  const img = require(`../../../../assets/section/ManagementSystem/icon-${
     isActive ? `${icon}-active` : icon
   }.png`)
 
